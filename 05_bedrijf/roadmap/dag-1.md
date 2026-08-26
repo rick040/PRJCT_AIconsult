@@ -60,7 +60,7 @@ Kies er één en verander hem daarna niet meer. Een productnaam die halverwege v
 
 De prijskaart heeft elf regels. Elf dingen verkopen betekent niets verkopen.
 
-- [ ] Kies de drie die je actief aanbiedt. Advies: **scan, startpakket, retainer**
+- [ ] Kies de drie die je actief aanbiedt. Advies: **scan, startpakket, retainer**. Bij de retainer noem je één trede, niet de hele ladder. De ladder is een gespreksinstrument bij dreigende opzegging, geen aanbod vooraf
 - [ ] De rest is antwoord op een vraag, geen aanbod
 - [ ] Noteer die keuze bovenaan `03_producten/README.md`
 
@@ -74,7 +74,7 @@ Lees de vier nieuwe bladen in `03_producten/` en zet er per blad je eigen grens 
 
 - [ ] `ai-readiness-scan.md`: hoeveel afdelingen doe je echt in twee weken
 - [ ] `toolkit-sprint.md`: bij hoeveel skills zeg je stop
-- [ ] `retainer.md`: hoeveel nieuwe skills per maand kun je waarmaken naast klantwerk
+- [ ] `retainer.md`: loop de vier tredes van de afbouwladder na. Kun je trede 1 waarmaken naast klantwerk, en is trede 4 echt bijna gratis voor jou
 - [ ] `workshop-en-webinar.md`: rijd je voor één dagdeel naar Helmond, en tot waar
 
 Dit is het saaiste uur van de week en het voorkomt de duurste fout: ja zeggen tegen iets wat je niet in de tijd kunt leveren.

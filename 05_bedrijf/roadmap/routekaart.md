@@ -32,7 +32,7 @@ BLOK 6  Sales en closing       ── start bij het eerste intakegesprek
 |---|---|---|---|
 | 1.1 | Productbladen doorlezen en de scopegrenzen aanscherpen: wat zit er wél in, wat niet | `03_producten/` | 1 uur |
 | 1.2 | Vaststellen welke drie regels van de prijskaart je actief verkoopt. De rest is antwoord op een vraag, geen aanbod | `03_producten/README.md` | 30 min |
-| 1.3 | De vóór/ná-demo kiezen: welke opstelling, op welke voorbeelddata | `00_kern/lagenmodel.md` | 2 uur |
+| 1.3 | De vóór/ná-demo kiezen: welke opstelling, op welke voorbeelddata. Het webinardraaiboek rekent erop | `00_kern/lagenmodel.md` | 2 uur |
 | 1.4 | Beslissing 8 sluiten: definitieve productnaam voor het kernproduct | `open-beslissingen.md` | 15 min |
 | 1.5 | Beslissing 1 sluiten: merknaam, want blok 3 kan niet zonder domeinnaam | `open-beslissingen.md` | 30 min |
 
@@ -66,7 +66,9 @@ BLOK 6  Sales en closing       ── start bij het eerste intakegesprek
 ## Blok 3: Communicatie
 
 **Doel:** iemand die je naam hoort, kan binnen twee minuten zien wat je doet en zich ergens voor aanmelden.
-**Nieuw in de repo:** `01_agents/06_content/output/landingspaginas/website-basis.md`, `output/linkedin-profiel.md`, `output/kalender_2026-09.md`
+**Ligt al klaar:** `06_content/output/landingspaginas/website-basis.md` (vijf pagina's), `landingspagina_scan.md`, `output/linkedin-profiel.md`, `output/kalender_2026-09.md`, vier uitgeschreven posts in `output/posts/`, één nieuwsbrief, en het webinardraaiboek in `05_training/output/webinar/`.
+
+Dit blok is dus grotendeels schrijfwerk dat al gedaan is. Wat resteert is publiceren.
 
 | # | Substap | Landt in | Tijd |
 |---|---|---|---|
@@ -74,10 +76,10 @@ BLOK 6  Sales en closing       ── start bij het eerste intakegesprek
 | 3.2 | Vijf pagina's website live: home, aanpak, wat het kost, over, webinar | `website-basis.md` | 2 dagen |
 | 3.3 | Aanmeldformulier webinar koppelen aan mail en aan de pijplijn | website | 2 uur |
 | 3.4 | Leadmagneet 1 af: de AI-Readiness checklist, 20 vragen | `06_content/output/` | 4 uur |
-| 3.5 | Contentkalender maand 1 vullen en de eerste zes posts uitschrijven | `kalender_2026-09.md`, `posts/` | 4 uur |
-| 3.6 | Eerste webinar plannen en de datum publiceren | website plus LinkedIn | 1 uur |
+| 3.5 | De vier bestaande posts nalopen op de tone-of-voice en inplannen. Twee posts erbij tot je op zes zit | `kalender_2026-09.md`, `posts/` | 2 uur |
+| 3.6 | Eerste webinar plannen en de datum publiceren. Draaiboek en slide-outline liggen er al | website plus LinkedIn | 1 uur |
 
-**Klaar als:** de site staat, het profiel is herschreven, er is een datum voor het webinar en er staan zes posts klaar.
+**Klaar als:** de site staat, het profiel is herschreven, er is een datum voor het webinar en er staan zes posts ingepland.
 
 **Wat je hier niet doet:** wachten op een perfecte site. Vijf pagina's die kloppen zijn beter dan twaalf die half af zijn. Branchelandingspagina's komen in maand 3.
 
@@ -115,14 +117,16 @@ BLOK 6  Sales en closing       ── start bij het eerste intakegesprek
 |---|---|---|---|
 | 5.1 | Drie conceptskills afmaken en op eigen werk testen | `proef-toolkit/` | 1 dag |
 | 5.2 | Beslissing 5 sluiten: wordt de proef-toolkit publiek weggegeven | `open-beslissingen.md` | 30 min |
-| 5.3 | Fundament-sjabloon voor prio-branche 1 afmaken | `04_bibliotheek/fundament-sjablonen/` | 1 dag |
+| 5.3 | Fundament-sjabloon voor prio-branche 1 nalopen. `zakelijke-dienstverlening.md` ligt er al, controleer of hij klopt met het structuurplan | `04_bibliotheek/fundament-sjablonen/` | 3 uur |
 | 5.4 | Eerste klantfundament bouwen. Alles wat hier werkt is kandidaat voor de bibliotheek | `02_klanten/[Klant]/03_fundament/` | per klant |
 | 5.5 | Eerste toolkit bouwen, drie tot zes skills, getest op hun echte data | `02_klanten/[Klant]/04_toolkit/` | per klant |
 | 5.6 | Na klant 1: klantdata eruit, werkende patronen naar de bibliotheek | `04_bibliotheek/` | 3 uur |
 
 **Klaar als:** de bibliotheek voor het eerst gevuld is met iets dat bij een echte klant heeft gewerkt.
 
-**De regel die je hier niet overtreedt:** de bibliotheek is geen ideeënbak. Iets komt daar pas in als het bij minimaal één klant heeft gewerkt én de klantdata eruit is. Concepten blijven staan in `01_agents/03_toolkit-builder/output/`.
+**De regel die je hier niet overtreedt:** een klantskill komt pas in de bibliotheek als hij bij minimaal één klant heeft gewerkt én de klantdata eruit is. Concepten blijven tot die tijd in `01_agents/03_toolkit-builder/output/proef-toolkit/`.
+
+Werkwijzeskills, waar wij zelf de eigenaar van zijn, vallen niet onder die eis. Het onderscheid staat uitgelegd in `04_bibliotheek/README.md`.
 
 ---
 
