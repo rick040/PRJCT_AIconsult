@@ -70,7 +70,7 @@ Fase: opbouw. Bestanden met `[MOCK]` in de titel of `[TE BEPALEN: ...]` in de te
 
 ## Waar je begint als je vandaag gaat werken
 
-1. `05_bedrijf/roadmap/dag-1.md` als je nog moet starten. Zeven taken, ongeveer vijf uur
+1. `05_bedrijf/roadmap/dag-1.md` en `dag-2.md` als je nog moet starten. Samen ongeveer 8,5 uur
 2. `05_bedrijf/roadmap/routekaart.md` voor de volgorde daarna: zes blokken van idee naar draaiende praktijk
 3. `05_bedrijf/framework/basisframework.md` als je de onderbouwing wilt lezen. Dat is geen stappenplan
 
