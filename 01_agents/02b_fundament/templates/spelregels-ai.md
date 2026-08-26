@@ -1,4 +1,4 @@
-# Spelregels AI — [Klant] [MOCK]
+# Spelregels AI: [Klant] [MOCK]
 
 Eén A4. Iedereen in het bedrijf leest dit en houdt zich eraan.
 

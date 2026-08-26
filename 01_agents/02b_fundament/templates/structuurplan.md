@@ -1,4 +1,4 @@
-# Structuurplan — [Klant] [MOCK]
+# Structuurplan: [Klant] [MOCK]
 
 **Datum:** [datum] · **Interne eigenaar bij klant:** [naam]
 

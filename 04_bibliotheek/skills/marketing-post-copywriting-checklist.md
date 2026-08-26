@@ -1,4 +1,4 @@
-# Marketing — Post-copywriting checklist
+# Marketing: Post-copywriting checklist
 
 **Eigenaar:** PRJCT AI · **Laatst bijgewerkt:** 2026-08-25 · **Getest op:** `[TE BEPALEN: nog niet getest op een echte klantcasus]`
 

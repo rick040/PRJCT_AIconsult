@@ -1,4 +1,4 @@
-# Spelregels AI — Van Hoof Installaties [MOCK, voorbeelduitvoer]
+# Spelregels AI: Van Hoof Installaties [MOCK, voorbeelduitvoer]
 
 > Voorbeelduitvoer van de fundament-agent. Eén A4, iedereen bij Van Hoof leest dit en houdt zich eraan.
 

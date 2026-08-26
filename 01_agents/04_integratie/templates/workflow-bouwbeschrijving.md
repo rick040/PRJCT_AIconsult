@@ -1,4 +1,4 @@
-# Workflow — [naam] [MOCK]
+# Workflow: [naam] [MOCK]
 
 **Klant:** [Klant] · **Domein:** [sales/operations/...] · **Datum:** [datum]
 

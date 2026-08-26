@@ -1,4 +1,4 @@
-# Trainingsdraaiboek — [Klant], [afdeling] [MOCK]
+# Trainingsdraaiboek: [Klant], [afdeling] [MOCK]
 
 **Sessie:** [1 van 2 / 2 van 2] · **Duur:** 90 minuten · **Deelnemers:** [aantal]
 

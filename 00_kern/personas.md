@@ -7,7 +7,7 @@
 
 ---
 
-## Bas — de eigenaar (primaire beslisser)
+## Bas: de eigenaar (primaire beslisser)
 
 **48, DGA installatie- of bouwbedrijf, 18 medewerkers, Helmond.**
 Praktisch, wantrouwt hype, rekent in uren en euro's. Werkt zelf mee in de zaak. Beslist alleen en snel, als hij het snapt.
@@ -24,7 +24,7 @@ Praktisch, wantrouwt hype, rekent in uren en euro's. Werkt zelf mee in de zaak. 
 
 ---
 
-## Marloes — de operationeel manager (initiatiefnemer en gebruiker)
+## Marloes: de operationeel manager (initiatiefnemer en gebruiker)
 
 **35, operations- of officemanager bij een adviesbureau, 22 medewerkers, Eindhoven.**
 Regelt alles, voelt de werkdruk het scherpst, heeft geen tekenbevoegdheid maar wél de doorslaggevende stem.
@@ -41,7 +41,7 @@ Regelt alles, voelt de werkdruk het scherpst, heeft geen tekenbevoegdheid maar w
 
 ---
 
-## Joris — de interne AI-enthousiasteling (champion, geen budget)
+## Joris: de interne AI-enthousiasteling (champion, geen budget)
 
 **29, junior of medior, doet AI "erbij".**
 Heeft al wat gebouwd, loopt vast op integratie en op collega's die niet meegaan.

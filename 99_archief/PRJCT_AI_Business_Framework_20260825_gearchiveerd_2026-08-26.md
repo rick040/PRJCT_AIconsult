@@ -1,4 +1,4 @@
-# PRJCT AI — Basisframework
+# PRJCT AI: Basisframework
 
 **Versie 1.2 · 25-08-2026 · Rick van Mierlo · Eindhoven/Geldrop**
 Status: fundament. Elk hoofdstuk is bedoeld als losse werkmodule die later verder wordt uitgewerkt (eigen agent, eigen skill, eigen deliverable).
@@ -9,7 +9,7 @@ Status: fundament. Elk hoofdstuk is bedoeld als losse werkmodule die later verde
 
 Nederlandse MKB-bedrijven met 10–25 medewerkers zetten elke AI-knop aan die hun software aanbiedt, zien er weinig van terugkomen en concluderen dat AI niet werkt. Het probleem zit niet in de knoppen maar in de laag eronder: rommelige bestandsstructuren, ongedefinieerde processen, kennis in hoofden en mailboxen, geen eigenaarschap. AI kan daar niets mee.
 
-PRJCT AI zet die laag eerst neer — domeinen, workflows, mappen, naamgeving, bronwaarheid, kennisbestanden per domein — en bouwt daarna pas de AI-werkplek erop: skills, plugins, MCP-koppelingen naar hun eigen systemen, plus training zodat het team het zelf blijft gebruiken. Het resultaat is persoonsonafhankelijk en toekomstvast: elke volgende AI, elk nieuw document en elke nieuwe medewerker sluit direct aan.
+PRJCT AI zet die laag eerst neer: domeinen, workflows, mappen, naamgeving, bronwaarheid, kennisbestanden per domein: en bouwt daarna pas de AI-werkplek erop: skills, plugins, MCP-koppelingen naar hun eigen systemen, plus training zodat het team het zelf blijft gebruiken. Het resultaat is persoonsonafhankelijk en toekomstvast: elke volgende AI, elk nieuw document en elke nieuwe medewerker sluit direct aan.
 
 Kern: **eerst structureren, dan inbouwen, dan overdragen.** Verkoopmotor: webinars en scans die doorlopen naar fundament, toolkit-sprints en retainers.
 
@@ -23,17 +23,17 @@ Doel: €10.000 omzet in 3 maanden uit deze lijn, zonder de bestaande design/web
 Een implementatie- en trainingspraktijk voor AI op de werkvloer. Geen losse chatbot-demo, maar een ingerichte AI-omgeving die past op hoe het bedrijf werkt.
 
 ### 1.2 Wat er concreet wordt opgeleverd
-0. **Bedrijfsfundament** — de laag onder alle AI. Domeinen afgebakend (sales, operations, marketing, finance, HR), processen beschreven, eigenaarschap belegd, bestands- en mappenstructuur opnieuw ingericht, naamgevingsconventies vastgelegd, bronwaarheid per gegeven bepaald. Zo weet elke AI, elke MCP en elke nieuwe medewerker direct waar wat staat en wat ermee moet gebeuren — ook bij nieuwe documenten en bij een rolwissel.
-1. **Skills** — herbruikbare, vastgelegde werkinstructies voor terugkerende taken (offerte maken, mail beantwoorden, rapport samenvatten, werkbon uitwerken).
-2. **MD-bestanden / kennisbasis** — bedrijfscontext, tone of voice, prijzen, procedures, klanttypes, vastgelegd zodat elk AI-antwoord klopt met hun werkelijkheid.
-3. **Plugins & toolkits** — een gebundelde set per afdeling, installeerbaar, met documentatie.
-4. **MCP-koppelingen** — AI verbonden met hun echte systemen: mail, agenda, Drive/SharePoint, CRM, boekhouding, projecttool.
-5. **Automatiseringen (n8n)** — voor wat volledig zonder mens moet lopen.
-6. **Training & webinars** — live sessies per afdeling, plus opname en naslag.
-7. **Governance-basis** — wat mag wel/niet in AI, AVG-afspraken, welke data waar.
-8. **Lokale AI (add-on, in ontwikkeling)** — AI die op eigen hardware of eigen server draait in plaats van in de cloud. Zie 1.5.
+0. **Bedrijfsfundament**: de laag onder alle AI. Domeinen afgebakend (sales, operations, marketing, finance, HR), processen beschreven, eigenaarschap belegd, bestands- en mappenstructuur opnieuw ingericht, naamgevingsconventies vastgelegd, bronwaarheid per gegeven bepaald. Zo weet elke AI, elke MCP en elke nieuwe medewerker direct waar wat staat en wat ermee moet gebeuren: ook bij nieuwe documenten en bij een rolwissel.
+1. **Skills**: herbruikbare, vastgelegde werkinstructies voor terugkerende taken (offerte maken, mail beantwoorden, rapport samenvatten, werkbon uitwerken).
+2. **MD-bestanden / kennisbasis**: bedrijfscontext, tone of voice, prijzen, procedures, klanttypes, vastgelegd zodat elk AI-antwoord klopt met hun werkelijkheid.
+3. **Plugins & toolkits**: een gebundelde set per afdeling, installeerbaar, met documentatie.
+4. **MCP-koppelingen**: AI verbonden met hun echte systemen: mail, agenda, Drive/SharePoint, CRM, boekhouding, projecttool.
+5. **Automatiseringen (n8n)**: voor wat volledig zonder mens moet lopen.
+6. **Training & webinars**: live sessies per afdeling, plus opname en naslag.
+7. **Governance-basis**: wat mag wel/niet in AI, AVG-afspraken, welke data waar.
+8. **Lokale AI (add-on, in ontwikkeling)**: AI die op eigen hardware of eigen server draait in plaats van in de cloud. Zie 1.5.
 
-### 1.3 Het lagenmodel — de kern van de aanpak
+### 1.3 Het lagenmodel: de kern van de aanpak
 
 Ondernemers zetten elke AI-knop aan die hun software aanbiedt en concluderen daarna dat AI niet werkt. Dat klopt ook: die knoppen werken alleen zo goed als de structuur eronder. Een AI-functie in hun CRM kan niets met een klantdossier dat half in de mail zit, half in een map `Nieuwe map (3)` en half in het hoofd van één collega.
 
@@ -52,7 +52,7 @@ Bijkomend effect van laag 0: de structuur is toekomstvast. Nieuwe documenten lan
 ### 1.4 Wat het niet is
 Geen strategierapport. Geen enterprise-transformatietraject. Geen eigen SaaS-product. Geen tooling die alleen bij Rick werkt.
 
-### 1.5 Lokale AI — toekomstige add-on, nog niet verkopen
+### 1.5 Lokale AI: toekomstige add-on, nog niet verkopen
 
 **Status: verkenning. Niet actief aanbieden tot Rick zich heeft ingelezen en één werkende opstelling heeft gedraaid.** Wel meenemen in het framework, want het past logisch op het fundament en is later een sterke uitbreiding.
 
@@ -78,7 +78,7 @@ Ladder van laag risico naar hoge waarde:
 | 2 | Bedrijfsfundament | structuur op orde, verplichte basis |
 | 2b | Toolkit Sprint (1 afdeling) | eerste zichtbare oplevering |
 | 3 | Bedrijfsbreed traject | hoofdomzet |
-| 4 | AI-partner retainer | terugkerende omzet, in gradaties — zie 8.5 |
+| 4 | AI-partner retainer | terugkerende omzet, in gradaties: zie 8.5 |
 | 5 | Toolkit-licenties / open trainingen | schaalbaar, arbeidsarm |
 
 Merkkeuze: opereren onder **PRJCT AI** als aparte lijn binnen PRJCT Agency. Design/web blijft eigen ingang, maar levert wel cross-sell.
@@ -123,7 +123,7 @@ Brainport-regio telt naar schatting enkele duizenden bedrijven in de klasse 10�
 
 ## 3. Persona's
 
-### Persona 1 — Bas, de eigenaar (primaire beslisser)
+### Persona 1: Bas, de eigenaar (primaire beslisser)
 **48, DGA installatie-/bouwbedrijf, 18 medewerkers, Helmond.**
 Praktisch, wantrouwt hype, rekent in uren en euro's. Werkt zelf mee in de zaak. Beslist alleen, snel, als hij het snapt.
 
@@ -134,7 +134,7 @@ Praktisch, wantrouwt hype, rekent in uren en euro's. Werkt zelf mee in de zaak. 
 - **Verliest hem:** jargon, slides, "AI-transformatie", vaag uurtarief
 - **Waar bereikbaar:** LinkedIn, ondernemersverenigingen, brancheavonden, via boekhouder/IT-partner
 
-### Persona 2 — Marloes, de operationeel manager (initiatiefnemer + gebruiker)
+### Persona 2: Marloes, de operationeel manager (initiatiefnemer + gebruiker)
 **35, operations/office manager bij adviesbureau, 22 medewerkers, Eindhoven.**
 Regelt alles, voelt de werkdruk het scherpst, heeft geen tekenbevoegdheid maar wél de doorslaggevende stem.
 
@@ -145,7 +145,7 @@ Regelt alles, voelt de werkdruk het scherpst, heeft geen tekenbevoegdheid maar w
 - **Verliest haar:** een oplossing die alleen de consultant kan onderhouden
 - **Waar bereikbaar:** LinkedIn, webinars, nieuwsbrief, vakgroepen
 
-### Persona 3 — Joris, de interne AI-enthousiasteling (champion, geen budget)
+### Persona 3: Joris, de interne AI-enthousiasteling (champion, geen budget)
 **29, junior/medior, doet AI "erbij".**
 Heeft al wat gebouwd, loopt vast op integratie en op collega's die niet meegaan.
 
@@ -181,7 +181,7 @@ Heeft al wat gebouwd, loopt vast op integratie en op collega's die niet meegaan.
 ## 5. Value proposition
 
 ### 5.1 Kernbelofte
-> **AI werkt pas als je bedrijf erop is gebouwd. Wij zetten eerst de structuur neer — domeinen, workflows, bestanden, kennis, eigenaarschap — en bouwen daar de AI-werkplek bovenop. Resultaat: elke AI-functie die je nu of later aanzet, weet meteen wat te doen.**
+> **AI werkt pas als je bedrijf erop is gebouwd. Wij zetten eerst de structuur neer: domeinen, workflows, bestanden, kennis, eigenaarschap: en bouwen daar de AI-werkplek bovenop. Resultaat: elke AI-functie die je nu of later aanzet, weet meteen wat te doen.**
 
 Tweede regel, voor wie snel resultaat wil horen: *binnen 30 dagen werkt je team er echt mee, met vastgelegde werkinstructies, gekoppeld aan jullie eigen systemen, en training zodat het blijft hangen.*
 
@@ -198,7 +198,7 @@ Tweede regel, voor wie snel resultaat wil horen: *binnen 30 dagen werkt je team 
 **Gain creators:** skills per rol · koppeling met eigen systemen · training + naslag · kwartaalupdate
 
 ### 5.3 Positioneringszin
-Voor MKB-directies in Brainport met 10–25 medewerkers die AI willen invoeren maar door de bomen het bos niet zien, is PRJCT AI de partner die eerst hun bedrijf zo structureert dat AI er iets mee kan, en die AI daarna in het dagelijkse werk inbouwt en overdraagt — anders dan adviesbureaus die alleen een rapport achterlaten, of softwareleveranciers die een AI-knop leveren zonder dat er iets bruikbaars onder ligt.
+Voor MKB-directies in Brainport met 10–25 medewerkers die AI willen invoeren maar door de bomen het bos niet zien, is PRJCT AI de partner die eerst hun bedrijf zo structureert dat AI er iets mee kan, en die AI daarna in het dagelijkse werk inbouwt en overdraagt: anders dan adviesbureaus die alleen een rapport achterlaten, of softwareleveranciers die een AI-knop leveren zonder dat er iets bruikbaars onder ligt.
 
 ### 5.4 Boodschap per persona
 - **Bas:** "Twee dagen kantoorwerk per week terug, zonder extra personeel. En als Jan weggaat, ligt alles vast."
@@ -209,7 +209,7 @@ Voor MKB-directies in Brainport met 10–25 medewerkers die AI willen invoeren m
 
 ## 6. USP's
 
-1. **Wij werken aan de laag onder AI.** Niet de knoppen, maar de structuur eronder: hoe het bedrijf is ingedeeld, hoe workflows lopen, waar bestanden staan, waar de bronwaarheid ligt, wie waarvan eigenaar is. Iedereen kan een AI-functie aanzetten. Wij zorgen dat die functie iets zinnigs aantreft. **Dit is de hoofd-USP — alle andere volgen hieruit.**
+1. **Wij werken aan de laag onder AI.** Niet de knoppen, maar de structuur eronder: hoe het bedrijf is ingedeeld, hoe workflows lopen, waar bestanden staan, waar de bronwaarheid ligt, wie waarvan eigenaar is. Iedereen kan een AI-functie aanzetten. Wij zorgen dat die functie iets zinnigs aantreft. **Dit is de hoofd-USP: alle andere volgen hieruit.**
 2. **Toekomstvast en persoonsonafhankelijk.** De structuur is zo opgezet dat nieuwe documenten vanzelf op hun plek landen, een nieuwe medewerker in dezelfde dag meedraait, en elke volgende AI of MCP direct weet wat te doen. Niet gebouwd voor het model van vandaag.
 3. **Implementatie, geen advies.** Er wordt gebouwd, niet gepresenteerd. Elke fase eindigt met iets dat draait.
 4. **Toolkit in eigendom van de klant.** Skills, MD-bestanden en documentatie blijven van hen, ook zonder PRJCT AI.
@@ -217,7 +217,7 @@ Voor MKB-directies in Brainport met 10–25 medewerkers die AI willen invoeren m
 6. **Vaste prijzen per fase.** Geen open uurtjes. Vooraf duidelijk wat het kost en wat eruit komt.
 7. **Ontwerpachtergrond.** Materiaal, documentatie en training zijn verzorgd en begrijpelijk, niet een technische dump.
 8. **Regionaal en fysiek aanwezig.** Langskomen, meekijken op de werkvloer, gezicht kennen.
-9. **Één aanspreekpunt.** Geen accountmanager, junior consultant en projectleider — dezelfde persoon van scan tot borging.
+9. **Één aanspreekpunt.** Geen accountmanager, junior consultant en projectleider: dezelfde persoon van scan tot borging.
 10. **Adoptie ingebouwd.** Training, interne champion en 30-dagen-check horen standaard bij de levering.
 
 **Pitchzin die USP 1 en 2 samenvat:** "Elke AI-knop in jullie software werkt precies zo goed als de rommel eronder. Wij ruimen die eerst op, en zetten er dan pas AI op."
@@ -261,20 +261,20 @@ Scan → sprint conversie (doel ≥ 50%) · sprint → retainer conversie (doel 
 | **Bedrijfsfundament** | €2.500 – €5.000 | domeinindeling, procesbeschrijvingen, eigenaarschap, mappen- en naamgevingsstructuur, bronwaarheid, MD-kennisbasis per domein | 3–5 weken |
 | **Toolkit Sprint (1 afdeling)** | €2.500 – €4.500 | 3–6 skills, MD-kennisbasis, 1–2 koppelingen, 2 trainingen, documentatie | 3–4 weken |
 | **Bedrijfsbreed traject** | €7.500 – €15.000 | 3 afdelingen, koppelingen, governance, champion-opleiding, borging | 8–12 weken |
-| **AI-partner retainer** | €99 – €2.000 p/m, in 4 gradaties | onderhoud, nieuwe skills, helpdesk, kwartaalupdate — zie 8.5 voor de volledige ladder | doorlopend |
+| **AI-partner retainer** | €99 – €2.000 p/m, in 4 gradaties | onderhoud, nieuwe skills, helpdesk, kwartaalupdate: zie 8.5 voor de volledige ladder | doorlopend |
 | **Losse automatisering (n8n)** | €750 – €2.500 | per workflow, inclusief oplevering en documentatie | 1–2 weken |
 | **Toolkit-licentie (branchepakket)** | €350 – €950 | kant-en-klaar pakket, zelf te installeren | direct |
 | **Lokale AI-opstelling** *(nog niet verkopen)* | indicatie €2.500 – €6.000 + hardware | AI op eigen server/hardware, data blijft binnen. Prijs pas vast na eigen proefopstelling | n.t.b. |
 
 ### 8.2 Prijsregels
-- **Fundament is verplicht vóór een sprint**, tenzij de scan aantoont dat de basis al op orde is. Dat is geen verkooptruc maar een leveringsvoorwaarde: zonder laag 0 en 1 is de sprint niet houdbaar. Zet dit letterlijk zo in de offerte — het maakt de USP tastbaar en voorkomt discussie achteraf.
+- **Fundament is verplicht vóór een sprint**, tenzij de scan aantoont dat de basis al op orde is. Dat is geen verkooptruc maar een leveringsvoorwaarde: zonder laag 0 en 1 is de sprint niet houdbaar. Zet dit letterlijk zo in de offerte: het maakt de USP tastbaar en voorkomt discussie achteraf.
 - Fundament en sprint samen als **AI-Fundament + Eerste Toolkit** aanbieden voor €5.500 – €8.500. Dat is het standaard-startpakket en de meest verkochte regel.
 - Scanbedrag wordt verrekend bij doorgang naar een sprint binnen 30 dagen. Dat maakt de instap risicoloos en dwingt tempo af.
 - Betaling: 50% vooraf, 50% bij oplevering. Retainer maandelijks vooraf.
 - Geldigheid offerte: 14 dagen.
 - Nooit uurtarief noemen. Alles per fase met vaste scope.
 - Meerwerk in blokken van €450 (halve dag).
-- Geen korting; wél scope verkleinen — dit geldt ook voor de retainer: nooit korting op een trede, wél afschalen naar een lagere trede (zie 8.5).
+- Geen korting; wél scope verkleinen: dit geldt ook voor de retainer: nooit korting op een trede, wél afschalen naar een lagere trede (zie 8.5).
 
 ### 8.3 Onderbouwing
 Een medewerker van €45k kost het bedrijf circa €65k per jaar. Vier uur tijdwinst per week bij drie medewerkers is ruwweg €25.000 per jaar. Een sprint van €3.500 verdient zich dan binnen twee maanden terug. **Dat sommetje staat in elke offerte, ingevuld met hun eigen cijfers.**
@@ -293,9 +293,9 @@ Benodigde funnel: circa 60 gekwalificeerde contacten → 20 gesprekken → 8 voo
 
 ### 8.5 Retainer-afbouwladder (anti-churn)
 
-**Probleem dat dit oplost:** SWOT-bedreiging 6 — klant heeft na het fundament/sprint zijn AI-gebruik op orde, voelt geen actieve waarde meer maandelijks, en zegt de volledige retainer op. Weg is de terugkerende omzet én het onderhoudscontact.
+**Probleem dat dit oplost:** SWOT-bedreiging 6: klant heeft na het fundament/sprint zijn AI-gebruik op orde, voelt geen actieve waarde meer maandelijks, en zegt de volledige retainer op. Weg is de terugkerende omzet én het onderhoudscontact.
 
-**Principe:** in plaats van een aan/uit-retainer, vier tredes die in prijs en dienstverlening afbouwen. Bij dreigende opzegging wordt nooit "opzeggen of niets" aangeboden, maar altijd eerst een trede lager. Onderin zit een bodemtrede die zo laag geprijsd is dat de klant er nooit meer bewust over nadenkt — en die desondanks ruim boven Ricks eigen kostprijs (grotendeels geautomatiseerde monitoring, nauwelijks actieve tijd) blijft liggen. Zo loopt de retainer jarenlang door zonder gesprek, terwijl de waarde (werkende koppelingen, geen stille storingen) de prijs ruim overtreft.
+**Principe:** in plaats van een aan/uit-retainer, vier tredes die in prijs en dienstverlening afbouwen. Bij dreigende opzegging wordt nooit "opzeggen of niets" aangeboden, maar altijd eerst een trede lager. Onderin zit een bodemtrede die zo laag geprijsd is dat de klant er nooit meer bewust over nadenkt: en die desondanks ruim boven Ricks eigen kostprijs (grotendeels geautomatiseerde monitoring, nauwelijks actieve tijd) blijft liggen. Zo loopt de retainer jarenlang door zonder gesprek, terwijl de waarde (werkende koppelingen, geen stille storingen) de prijs ruim overtreft.
 
 | Trede | Naam | Prijs p/m | Inhoud | Voor wie |
 |---|---|---|---|---|
@@ -309,15 +309,15 @@ Benodigde funnel: circa 60 gekwalificeerde contacten → 20 gesprekken → 8 voo
 - Waarde voor de klant blijft hoog: koppelingen breken vaak stil (API-wijziging bij de softwareleverancier, aflopend token, gewijzigd model) zonder dat iemand het merkt tot er al weken foute output is gebruikt. €99–149/mnd tegen dat risico is voor een MKB-directie geen bedrag om over te bellen.
 - Vergelijkbaar met een streamingabonnement: te klein om over na te denken, te vervelend om op te zeggen voor het bedrag dat het scheelt.
 
-**Regel voor het gesprek — nooit proactief afschalen aanbieden.** Trede-verlaging wordt alleen ter sprake gebracht wanneer:
+**Regel voor het gesprek: nooit proactief afschalen aanbieden.** Trede-verlaging wordt alleen ter sprake gebracht wanneer:
 1. de klant zelf aangeeft te willen stoppen of te bezuinigen, of
 2. gebruiksdata (skill-gebruik, supportvragen) over twee opeenvolgende kwartalen structureel onder de drempel van de huidige trede zakt.
 
-Bij zo'n moment is de zin altijd: *"Voordat we het helemaal stopzetten — we kunnen ook terug naar [trede], dat kost bijna niks, maar je koppelingen en kennisbestanden blijven wel gecontroleerd draaien. Zullen we dat doen in plaats van volledig stoppen?"* Nooit zelf het opzeggen voorstellen als eerste optie.
+Bij zo'n moment is de zin altijd: *"Voordat we het helemaal stopzetten: we kunnen ook terug naar [trede], dat kost bijna niks, maar je koppelingen en kennisbestanden blijven wel gecontroleerd draaien. Zullen we dat doen in plaats van volledig stoppen?"* Nooit zelf het opzeggen voorstellen als eerste optie.
 
-**Reactivatie:** vanuit trede 3 of 4 is opschalen laagdrempelig — geen nieuw traject, gewoon een trede omhoog, ingaand volgende factuurmaand. Dit is het natuurlijke instappunt zodra een klant weer gaat groeien of een nieuwe afdeling erbij pakt.
+**Reactivatie:** vanuit trede 3 of 4 is opschalen laagdrempelig: geen nieuw traject, gewoon een trede omhoog, ingaand volgende factuurmaand. Dit is het natuurlijke instappunt zodra een klant weer gaat groeien of een nieuwe afdeling erbij pakt.
 
-**Verwerking in KPI's:** retentie meten op twee niveaus — "retainer actief (ongeacht trede)" en "retainer op trede 1–2 (hoogwaardig)". Trede 4-klanten tellen mee voor omzetbehoud, niet voor groei.
+**Verwerking in KPI's:** retentie meten op twee niveaus: "retainer actief (ongeacht trede)" en "retainer op trede 1–2 (hoogwaardig)". Trede 4-klanten tellen mee voor omzetbehoud, niet voor groei.
 
 ---
 
@@ -333,12 +333,12 @@ Bij zo'n moment is de zin altijd: *"Voordat we het helemaal stopzetten — we ku
 ### Zwaktes
 1. Solo-operator: capaciteitsplafond en leveringsrisico bij ziekte
 2. Nog geen referenties of casussen in deze specifieke lijn
-3. Geen merkgezag als "AI-partij" — bekend als designer
+3. Geen merkgezag als "AI-partij": bekend als designer
 4. Geen certificering, geen securitydossier voor kritische klanten
 5. Aandacht verdeeld over design/web en deze nieuwe lijn
 
 ### Kansen
-1. **Softwareleveranciers bouwen AI standaard in hun pakketten in.** Dit is geen bedreiging maar de motor onder de vraag: elke ondernemer zet die knoppen aan, ziet dat het weinig oplevert, en gaat zoeken naar het waarom. Dat waarom is de structuur eronder — precies het aanbod. Elke nieuwe AI-functie die een leverancier uitrolt, is gratis vraagcreatie en levert een prospect op die de teleurstelling al zelf heeft gevoeld.
+1. **Softwareleveranciers bouwen AI standaard in hun pakketten in.** Dit is geen bedreiging maar de motor onder de vraag: elke ondernemer zet die knoppen aan, ziet dat het weinig oplevert, en gaat zoeken naar het waarom. Dat waarom is de structuur eronder: precies het aanbod. Elke nieuwe AI-functie die een leverancier uitrolt, is gratis vraagcreatie en levert een prospect op die de teleurstelling al zelf heeft gevoeld.
 2. Regio Brainport: technisch bewustzijn hoog, uitvoering laag
 3. Grote adviesbureaus richten zich op corporates; 10–25 fte is onderbediend
 4. Personeelskrapte maakt tijdwinst direct waardevol
@@ -354,7 +354,7 @@ Bij zo'n moment is de zin altijd: *"Voordat we het helemaal stopzetten — we ku
 3. Prijsdruk door AI-consultants zonder uitvoeringskracht
 4. Snel veranderend landschap maakt toolkits (laag 2 en 3) verouderd
 5. AVG/AI Act-eisen verzwaren richting zakelijke en zorgklanten
-6. ~~Klanten die na het fundament zelf verdergaan en de retainer laten vallen~~ — grotendeels ondervangen door de retainer-afbouwladder (8.5): klant valt niet meer op nul, maar zakt naar een bodemtrede die blijft lopen
+6. ~~Klanten die na het fundament zelf verdergaan en de retainer laten vallen~~: grotendeels ondervangen door de retainer-afbouwladder (8.5): klant valt niet meer op nul, maar zakt naar een bodemtrede die blijft lopen
 
 ### Strategische conclusies
 - **S×O1:** de teleurstelling over ingebouwde AI-knoppen is de scherpste haak in alle content, outreach en het webinar. Openingszin: "Jullie hebben de AI-functies aangezet en er gebeurde weinig. Dat ligt niet aan de AI."
@@ -385,11 +385,11 @@ Niche op **bedrijfsgrootte en regio**, niet op techniek. Elke uiting begint bij 
 Geen betaalde advertenties in de eerste 3 maanden. Eerst boodschap valideren via organische kanalen en gesprekken.
 
 ### 10.3 Contentpijlers (LinkedIn + nieuwsbrief)
-1. **Laten zien** — korte demo van één skill, met resultaat ("offerte in 4 minuten in plaats van 40")
-2. **Ontnuchteren** — wat AI in het MKB níet doet, mislukte pilots, waarom tools blijven liggen
-3. **Uitleggen** — skills, MD-bestanden, MCP, toolkits, in mensentaal
-4. **Bewijzen** — casussen, cijfers, klantcitaten
-5. **Meekijken** — bouwen in de openbaarheid, eigen werkwijze delen
+1. **Laten zien**: korte demo van één skill, met resultaat ("offerte in 4 minuten in plaats van 40")
+2. **Ontnuchteren**: wat AI in het MKB níet doet, mislukte pilots, waarom tools blijven liggen
+3. **Uitleggen**: skills, MD-bestanden, MCP, toolkits, in mensentaal
+4. **Bewijzen**: casussen, cijfers, klantcitaten
+5. **Meekijken**: bouwen in de openbaarheid, eigen werkwijze delen
 
 Vaste haak in de eerste 3 woorden. Elke post eindigt in een concrete vervolgstap (webinar, scan, gesprek).
 
@@ -404,10 +404,10 @@ Doel per editie: 25 aanmeldingen, 12 aanwezigen, 4 intakes, 1–2 scans.
 Opname wordt hergebruikt als contentbron en als leadmagneet.
 
 ### 10.5 Leadmagneten
-1. **AI-Startgids voor MKB (10–25 medewerkers)** — pdf, 12 pagina's, de routekaart
-2. **AI-Readiness checklist** — 20 vragen, zelfscore
-3. **Gratis proef-toolkit** — 3 werkende skills, direct bruikbaar, met PRJCT-signatuur
-4. **Tijdwinst-calculator** — invullen, uitkomst in uren en euro's per jaar
+1. **AI-Startgids voor MKB (10–25 medewerkers)**: pdf, 12 pagina's, de routekaart
+2. **AI-Readiness checklist**: 20 vragen, zelfscore
+3. **Gratis proef-toolkit**: 3 werkende skills, direct bruikbaar, met PRJCT-signatuur
+4. **Tijdwinst-calculator**: invullen, uitkomst in uren en euro's per jaar
 
 ### 10.6 Salesflow
 Webinar of outreach → intake 30 min (video) → scanvoorstel → scan uitvoeren → presentatie roadmap → sprintvoorstel (verrekening scan) → sprint → 30-dagen-check → retainervoorstel (starten op trede 1 of 2, zie 8.5).
@@ -416,13 +416,13 @@ Vaste opvolging: dag 1 samenvatting, dag 3 casus, dag 7 telefoon, dag 14 laatste
 
 ### 10.7 90-dagenplan
 
-**Maand 1 — fundament en eerste bewijs**
+**Maand 1: fundament en eerste bewijs**
 Positionering en prijskaart vastzetten · landingspagina live · LinkedIn-profiel herschrijven · 15 doelgroepgesprekken · 2 leadmagneten af · eerste webinar plannen · eerste scan verkopen aan bestaande klant
 
-**Maand 2 — motor aanzetten**
+**Maand 2: motor aanzetten**
 Eerste webinar draaien · 3 scans uitvoeren · eerste sprint verkopen en starten · casus #1 documenteren · 3 partnergesprekken · outreach op 20 contacten per week
 
-**Maand 3 — herhalen en borgen**
+**Maand 3: herhalen en borgen**
 Tweede webinar · sprint opleveren en meten · retainer aanbieden · casus #2 · branchelandingspagina's live · besluit over het eerste branchepakket
 
 ### 10.8 KPI's
@@ -472,9 +472,9 @@ Elk blok hieronder wordt later een eigen agent of skill met eigen bestanden en e
 5. Wordt de proef-toolkit publiek weggegeven, en zo ja welke drie skills?
 6. Marktcijfers uit 2.4 hard maken met KvK/Company.info-data.
 7. Lokale AI (1.5): wanneer wordt de eigen proefopstelling ingepland, en op welke hardware? Pas daarna een aanbod formuleren. Tot die tijd alleen benoemen als richting, nooit als dienst.
-8. Naamgeving van het kernproduct: "Bedrijfsfundament", "AI-Fundament" of "AI-Ready Bedrijf"? De naam moet resultaat suggereren, niet structuurwerk — dat laatste klinkt als saai en duur.
-9. Hoe wordt de vangnet-monitoring (trede 4, 8.5) technisch gebouwd — losse n8n-workflow per klant of één gedeeld monitoring-dashboard over alle vangnet-klanten? Bepaalt de echte kostprijs van de bodemtrede.
+8. Naamgeving van het kernproduct: "Bedrijfsfundament", "AI-Fundament" of "AI-Ready Bedrijf"? De naam moet resultaat suggereren, niet structuurwerk: dat laatste klinkt als saai en duur.
+9. Hoe wordt de vangnet-monitoring (trede 4, 8.5) technisch gebouwd: losse n8n-workflow per klant of één gedeeld monitoring-dashboard over alle vangnet-klanten? Bepaalt de echte kostprijs van de bodemtrede.
 
 ---
 
-*Volgende stap: hoofdstuk voor hoofdstuk uitwerken tot werkdocumenten, te beginnen bij prijskaart, personas en bezwaren-en-antwoorden — die drie voeden elke agent.*
+*Volgende stap: hoofdstuk voor hoofdstuk uitwerken tot werkdocumenten, te beginnen bij prijskaart, personas en bezwaren-en-antwoorden: die drie voeden elke agent.*

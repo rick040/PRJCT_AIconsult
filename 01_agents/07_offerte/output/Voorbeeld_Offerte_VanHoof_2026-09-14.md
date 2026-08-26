@@ -1,4 +1,4 @@
-# Voorstel — Van Hoof Installaties [MOCK, voorbeelduitvoer]
+# Voorstel: Van Hoof Installaties [MOCK, voorbeelduitvoer]
 
 **Aan:** Bas van Hoof · **Van:** Rick van Mierlo, PRJCT AI · **Datum:** 2026-09-14 · **Geldig tot:** 2026-09-28
 
@@ -10,10 +10,10 @@ Jullie hebben de AI-functie in Outlook al aanstaan, maar die helpt niet bij het 
 
 ## Wat we gaan doen
 
-### Fase 1 — Bedrijfsfundament
+### Fase 1: Bedrijfsfundament
 We brengen de domeinen sales, operations, finance en directie in kaart, bepalen per kerngegeven waar de waarheid staat (prijzen, klantgegevens, offertes), en zetten een vaste mappenstructuur neer. Geen los Excel-bestand meer naast een half onthouden prijslijst.
 
-### Fase 2 — Toolkit Sprint Sales
+### Fase 2: Toolkit Sprint Sales
 We bouwen een werkinstructie voor het opstellen van offertes, getest op minimaal drie echte aanvragen. Wendy wordt opgeleid tot beheerder.
 
 ## Wat je krijgt

@@ -1,4 +1,4 @@
-# CLAUDE.md — werkinstructie voor elke agent in deze repo
+# CLAUDE.md: werkinstructie voor elke agent in deze repo
 
 Dit bestand wordt automatisch gelezen door Claude Code en Cowork. Lees het volledig voordat je iets doet.
 
@@ -12,11 +12,11 @@ Deze repo is tegelijk het product. De structuur hier is dezelfde structuur die w
 
 Voor elke opdracht, zonder uitzondering, eerst lezen:
 
-1. `00_kern/positionering.md` — wie we zijn, wat we wel en niet doen
-2. `00_kern/lagenmodel.md` — de inhoudelijke kern van de aanpak
-3. `00_kern/prijskaart.md` — bij alles wat met geld te maken heeft
-4. `00_kern/personas.md` — bij alles wat richting een klant gaat
-5. `00_kern/tone-of-voice.md` — bij elke tekst
+1. `00_kern/positionering.md`: wie we zijn, wat we wel en niet doen
+2. `00_kern/lagenmodel.md`: de inhoudelijke kern van de aanpak
+3. `00_kern/prijskaart.md`: bij alles wat met geld te maken heeft
+4. `00_kern/personas.md`: bij alles wat richting een klant gaat
+5. `00_kern/tone-of-voice.md`: bij elke tekst
 
 Daarna het `AGENT.md` van de agent waarin je werkt.
 
@@ -26,7 +26,7 @@ Daarna het `AGENT.md` van de agent waarin je werkt.
 
 | Soort werk | Locatie |
 |---|---|
-| Klantspecifiek | `02_klanten/[Klant]/` — kopie van `_TEMPLATE/` |
+| Klantspecifiek | `02_klanten/[Klant]/`: kopie van `_TEMPLATE/` |
 | Generiek werkmateriaal, niet klantgebonden | `01_agents/[agent]/output/` |
 | Herbruikbaar, af, voor meerdere klanten | `04_bibliotheek/` |
 | Bedrijfsvoering PRJCT AI zelf | `05_bedrijf/` |

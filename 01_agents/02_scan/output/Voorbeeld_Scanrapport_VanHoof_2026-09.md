@@ -1,4 +1,4 @@
-# AI Readiness Scan — Van Hoof Installaties [MOCK, voorbeelduitvoer]
+# AI Readiness Scan: Van Hoof Installaties [MOCK, voorbeelduitvoer]
 
 **Datum:** 2026-09-16 · **Uitgevoerd door:** Rick van Mierlo · **Contactpersoon:** Bas van Hoof, DGA
 

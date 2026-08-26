@@ -1,4 +1,4 @@
-# Sales — Offerte opstellen [MOCK, voorbeelduitvoer]
+# Sales: Offerte opstellen [MOCK, voorbeelduitvoer]
 
 **Eigenaar:** Wendy Smulders · **Laatst bijgewerkt:** 2026-10-19 · **Getest op:** 3 echte aanvragen van Van Hoof Installaties
 
@@ -29,7 +29,7 @@ Zet een binnengekomen offerteaanvraag om in een conceptofferte, met de actuele p
 ## Wat komt eruit
 Een conceptofferte in de klantmap, klaar voor controle. Voorbeeld van de kop:
 
-> Offerte — Fam. Verhoeven, vervangen cv-ketel, Helmond. Datum 2026-10-19, geldig tot 2026-11-02.
+> Offerte: Fam. Verhoeven, vervangen cv-ketel, Helmond. Datum 2026-10-19, geldig tot 2026-11-02.
 
 ## Wat kan er misgaan
 

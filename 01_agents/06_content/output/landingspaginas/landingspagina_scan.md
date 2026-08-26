@@ -1,4 +1,4 @@
-# Landingspagina — AI Readiness Scan [MOCK, voorbeelduitvoer]
+# Landingspagina: AI Readiness Scan [MOCK, voorbeelduitvoer]
 
 **Persona:** Bas (primair), met een aparte alinea voor Marloes
 **Doel:** aanvraag scan

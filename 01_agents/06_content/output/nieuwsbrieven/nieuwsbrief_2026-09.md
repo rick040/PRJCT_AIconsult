@@ -1,4 +1,4 @@
-# Nieuwsbrief — september 2026 [MOCK, voorbeelduitvoer]
+# Nieuwsbrief: september 2026 [MOCK, voorbeelduitvoer]
 
 **Persona:** Marloes (primair), leesbaar voor Bas
 **Verzenddatum:** 2026-09-15

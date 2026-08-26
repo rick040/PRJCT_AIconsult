@@ -1,4 +1,4 @@
-# Post — Deze week bij een installatiebedrijf [MOCK, voorbeelduitvoer]
+# Post: Deze week bij een installatiebedrijf [MOCK, voorbeelduitvoer]
 
 **Persona:** Bas
 **Pijler:** meekijken

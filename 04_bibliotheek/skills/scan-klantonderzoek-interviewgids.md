@@ -1,4 +1,4 @@
-# Scan — Klantonderzoek interviewgids
+# Scan: Klantonderzoek interviewgids
 
 **Eigenaar:** PRJCT AI · **Laatst bijgewerkt:** 2026-08-25 · **Getest op:** `[TE BEPALEN: nog niet getest op een echte klant]`
 

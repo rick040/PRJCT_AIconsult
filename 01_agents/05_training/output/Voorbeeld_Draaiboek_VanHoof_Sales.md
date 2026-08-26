@@ -1,4 +1,4 @@
-# Trainingsdraaiboek — Van Hoof Installaties, Sales [MOCK, voorbeelduitvoer]
+# Trainingsdraaiboek: Van Hoof Installaties, Sales [MOCK, voorbeelduitvoer]
 
 **Sessie:** 1 van 2 · **Duur:** 90 minuten · **Deelnemers:** 2 (Bas van Hoof, Wendy Smulders)
 

@@ -12,3 +12,4 @@ Bewust nog niet beslist. Bijwerken zodra er een knoop is doorgehakt, met datum e
 | 6 | Marktcijfers hard maken met KvK of Company.info | open | |
 | 7 | Lokale AI: wanneer en op welke hardware de proefopstelling? | open | |
 | 8 | Productnaam kernproduct: Bedrijfsfundament, AI-Fundament of AI-Ready Bedrijf? | beslist 2026-08-26: Bedrijfsfundament | Al in gebruik in prijskaart en lagenmodel, toetst goed op "wat jullie nodig hebben is een fundament", suggereert resultaat in plaats van structuurwerk |
+| 9 | Vangnet-monitoring (trede 4): losse n8n-workflow per klant of één gedeeld monitoring-dashboard over alle vangnet-klanten? | open | Bepaalt de echte kostprijs van de bodemtrede |

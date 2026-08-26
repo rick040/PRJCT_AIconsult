@@ -1,4 +1,4 @@
-# [Domein] — [Taak]
+# [Domein]: [Taak]
 
 **Eigenaar:** [naam] · **Laatst bijgewerkt:** [datum] · **Getest op:** [aantal] echte gevallen
 

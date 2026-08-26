@@ -1,4 +1,4 @@
-# Resultaten na [30/60] dagen — [Klant] [MOCK]
+# Resultaten na [30/60] dagen: [Klant] [MOCK]
 
 **Datum:** [datum] · **Gemeten door:** Rick van Mierlo · **Champion bij klant:** [naam]
 

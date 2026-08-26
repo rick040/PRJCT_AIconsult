@@ -1,4 +1,4 @@
-# Voorstel — [Klant] [MOCK]
+# Voorstel: [Klant] [MOCK]
 
 **Aan:** [naam] · **Van:** Rick van Mierlo, PRJCT AI · **Datum:** [datum] · **Geldig tot:** [datum + 14 dagen]
 
@@ -8,10 +8,10 @@
 
 ## Wat we gaan doen
 
-### Fase 1 — Bedrijfsfundament
+### Fase 1: Bedrijfsfundament
 [Wat er gebeurt, in hun taal. Geen jargon, niet het woord structuur.]
 
-### Fase 2 — Toolkit Sprint [afdeling]
+### Fase 2: Toolkit Sprint [afdeling]
 [Idem.]
 
 ## Wat je krijgt

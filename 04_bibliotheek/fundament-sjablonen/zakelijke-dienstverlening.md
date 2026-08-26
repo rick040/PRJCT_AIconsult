@@ -1,4 +1,4 @@
-# Fundamentsjabloon — zakelijke dienstverlening [MOCK]
+# Fundamentsjabloon: zakelijke dienstverlening [MOCK]
 
 Startpunt voor accountants, adviesbureaus, makelaars, HR en recruitment. Aanpassen per klant, nooit één op één overnemen.
 

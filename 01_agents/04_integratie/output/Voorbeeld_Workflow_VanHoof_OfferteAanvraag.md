@@ -1,4 +1,4 @@
-# Workflow — Offerteaanvraag naar conceptofferte [MOCK, voorbeelduitvoer]
+# Workflow: Offerteaanvraag naar conceptofferte [MOCK, voorbeelduitvoer]
 
 **Klant:** Van Hoof Installaties · **Domein:** Sales · **Datum:** 2026-11-09
 
@@ -19,9 +19,9 @@ Een binnenkomende offerteaanvraag via het contactformulier automatisch in de jui
 
 | # | Node | Type | Wat het doet | Condities |
 |---|---|---|---|---|
-| 1 | Formulier ontvangen | Webhook | Vangt de inzending op (naam, adres, dienst, bericht) | — |
+| 1 | Formulier ontvangen | Webhook | Vangt de inzending op (naam, adres, dienst, bericht) | n.v.t. |
 | 2 | Klantmap controleren | Function | Zoekt of `01_klanten/[Klantnaam]/` al bestaat | Bestaat niet → aanmaken |
-| 3 | Aanvraag wegschrijven | Move/Write | Zet de aanvraag als bestand in `01_klanten/[Klantnaam]/01_offertes/` | — |
+| 3 | Aanvraag wegschrijven | Move/Write | Zet de aanvraag als bestand in `01_klanten/[Klantnaam]/01_offertes/` | n.v.t. |
 | 4 | Melding naar Wendy | Mail/Teams | Stuurt bericht: nieuwe aanvraag klaar voor de skill sales-offerte-opstellen | Alleen tijdens werkdagen 07:00-18:00, anders volgende werkdag |
 
 ## Verwachte uitkomst

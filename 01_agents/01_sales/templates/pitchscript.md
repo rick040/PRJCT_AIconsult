@@ -1,4 +1,4 @@
-# Pitchscript — [Klant] [MOCK]
+# Pitchscript: [Klant] [MOCK]
 
 **Persona:** [Bas / Marloes / Joris]
 **Haak:** [het specifieke dat je hebt gevonden]

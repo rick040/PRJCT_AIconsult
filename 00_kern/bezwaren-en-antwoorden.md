@@ -90,4 +90,4 @@ Structuur per bezwaar: wat ze zeggen, wat ze bedoelen, hoe je antwoordt, en wat 
 **Nu nog:** eerlijk zijn. "Deze lijn is nieuw, ik heb er nog geen referentie voor. Wat ik wel kan: je precies laten zien wat ik oplever, en beginnen met een scan van €750 zodat je risico klein is."
 **Zodra casus 1 er is:** vervangen door de casus.
 
-`[TE VERVANGEN zodra er twee casussen zijn]`
+`[TE BEPALEN: vervangen zodra er twee casussen zijn]`
