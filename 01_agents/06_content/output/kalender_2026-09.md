@@ -1,4 +1,4 @@
-# Contentkalender — september 2026 [MOCK, voorbeelduitvoer]
+# Contentkalender september 2026 [MOCK, voorbeelduitvoer]
 
 Ritme: 3 posts per week, nieuwsbrief 2x per maand. Elk stuk kiest één persona en één pijler, zie `01_agents/06_content/AGENT.md`.
 
@@ -19,4 +19,24 @@ Ritme: 3 posts per week, nieuwsbrief 2x per maand. Elk stuk kiest één persona 
 
 ## Let op
 - Post van 2026-09-17 (pijler Bewijzen) mag pas met een echte casus en schriftelijke toestemming. Tot die tijd blijft dit `[TE MAKEN]`, niet invullen met verzonnen cijfers.
-- Landingspaginatekst voor de scan staat los in `landingspaginas/landingspagina_scan.md`, wordt niet elke maand herschreven.
+- Landingspaginatekst voor de scan staat los in `landingspaginas/landingspagina_scan.md`, wordt niet elke maand herschreven. De vijf basispagina's staan in `landingspaginas/website-basis.md`.
+
+## Hergebruik
+
+Eén webinar levert minimaal negen stukken content:
+- 3 videofragmenten van maximaal 90 seconden
+- 3 posts uit de vragen die gesteld werden
+- 1 nieuwsbrief
+- 1 landingspaginablok
+- 1 leadmagneet (de opname zelf)
+
+Maak niets nieuws zolang het vorige webinar nog niet is uitgemolken. Dat is ook waarom de `[TE MAKEN]`-regels in week 38 tot 40 bewust leeg staan.
+
+## Norm deze maand
+
+| | Norm | Nu |
+|---|---|---|
+| Posts | 12 | 4 concept |
+| Nieuwsbrieven | 2 | 1 concept |
+| Webinaraanmeldingen | 25 | 0 |
+| Volgers uit de doelgroep | +130 | 0 |
