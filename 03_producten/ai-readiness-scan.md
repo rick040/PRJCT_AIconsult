@@ -26,6 +26,9 @@ Het risico voor de koper is klein, het bedrag past binnen zijn tekenbevoegdheid 
 | 4 | Uitwerken rapport en businesscase | dag 5 tot 8 |
 | 5 | Presentatie roadmap, 45 min, plus voorstel | dag 9 tot 10 |
 
+## Eigen grens
+Maximaal 2 afdelingen grondig in twee weken, niet 3. De derde afdeling uit de opsomming hierboven is het plafond, niet de norm: alleen als de eerste twee klein en overzichtelijk zijn. Meer afdelingen betekent een langere doorlooptijd offreren, niet dezelfde twee weken volproppen.
+
 ## Wat er niet in zit
 - Geen bouwwerk. Er wordt niets opgeleverd dat draait.
 - Geen securityaudit of AVG-toets.

@@ -27,6 +27,9 @@ Bij de 30-dagenmeting na de sprint, niet later. Op dat moment ligt er een gemete
 ## Het verkoopargument
 Laag 0 en 1 verouderen nauwelijks. Laag 2 en 3 wel: modellen veranderen, koppelingen breken, het werk verschuift. De retainer dekt precies dat verschil. Zo staat het ook in `00_kern/lagenmodel.md`.
 
+## Eigen grens
+Trede 1 is naast klantwerk haalbaar tot en met 2 klanten tegelijk op die trede. Bij een derde trede-1-klant wordt eerst gekeken of een bestaande klant kan afschalen, voordat een nieuwe wordt aangenomen. Trede 4 kost vrijwel geen tijd, geautomatiseerde monitoring plus incidentele noodfix, en is voor Rick bijna marge zonder extra werk.
+
 ## Wat er niet in zit
 - Geen nieuwe afdeling erbij. Dat is een nieuwe sprint.
 - Geen IT-beheer. Dat blijft bij hun IT-partner.

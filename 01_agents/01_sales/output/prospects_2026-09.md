@@ -1,26 +1,30 @@
-# Prospectlijst [MOCK] september 2026
+# Prospectlijst september 2026
 
 Getoetst aan `00_kern/doelgroep.md` en gescoord met `01_agents/01_sales/templates/kwalificatie-scorekaart.md`. Afgewezen bedrijven blijven staan met reden, ze worden niet verwijderd.
 
 **Norm:** 60 gekwalificeerde namen in de eerste maand, waarvan minimaal 15 op de A-lijst. Zie `bronnen-en-lijstopbouw.md` voor waar die vandaan komen.
 
+**Bronnen voor deze ronde (2026-08-26):** klantenlijst PRJCT Agency (10-25 medewerkers) en LinkedIn-connecties, gescoord met de kwalificatie-scorekaart. Nog niet benaderen, dat is week 4.
+
 ## Gekwalificeerd
 
 | Bedrijf | Plaats | Branche | Mdw | Persona | Haak | Score | Lijst | Status |
 |---|---|---|---|---|---|---|---|---|
-| [MOCK] Van Hoof Installaties | Helmond | Installatie/bouw | 18 | Bas | Vacature "administratief medewerker" al 2 maanden open op eigen site | 17 | A | Gekwalificeerd, in pijplijn |
-| [MOCK] Adviesbureau Kern | Eindhoven | Zakelijke dienstverlening | 22 | Marloes | LinkedIn-post over "eindelijk Copilot aangezet, valt tegen" | 18 | A | Gekwalificeerd, in pijplijn |
-| [MOCK] Makelaardij Van der Weijden | Veldhoven | Zakelijke dienstverlening | 12 | Bas | Nieuwe vestiging Best geopend, groei zonder extra kantoorpersoneel | 14 | B | Gekwalificeerd, wachtend op haak-verificatie |
-| [MOCK] TechInstall Best | Best | Installatie/techniek | 25 | Joris | Vacature "IT/AI-coördinator (junior)" op LinkedIn | 15 | A | Gekwalificeerd, Joris is instap, Bas blijft tekenbevoegd |
-| [MOCK] Groothandel De Ruiter | Son en Breugel | Groothandel | 16 | Marloes | Google review klant: "reageren duurt altijd te lang" | 12 | B | Gekwalificeerd, nog geen contact gelegd |
+| [TE BEPALEN: bedrijfsnaam 1] | | | | | | | | Nog te scoren |
+| [TE BEPALEN: bedrijfsnaam 2] | | | | | | | | Nog te scoren |
+| [TE BEPALEN: bedrijfsnaam 3] | | | | | | | | Nog te scoren |
+| [TE BEPALEN: bedrijfsnaam 4] | | | | | | | | Nog te scoren |
+| [TE BEPALEN: bedrijfsnaam 5] | | | | | | | | Nog te scoren |
+| [TE BEPALEN: bedrijfsnaam 6] | | | | | | | | Nog te scoren |
+| [TE BEPALEN: bedrijfsnaam 7] | | | | | | | | Nog te scoren |
+| [TE BEPALEN: bedrijfsnaam 8] | | | | | | | | Nog te scoren |
+| [TE BEPALEN: bedrijfsnaam 9] | | | | | | | | Nog te scoren |
+| [TE BEPALEN: bedrijfsnaam 10] | | | | | | | | Nog te scoren |
 
 ## Afgewezen
 
 | Bedrijf | Plaats | Mdw | Reden |
 |---|---|---|---|
-| [MOCK] Fysio Nuenen Centraal | Nuenen | 9 | Onder 10 medewerkers, knock-out |
-| [MOCK] Bouwgroep Kerkhof | Someren | 60 | Boven 50 medewerkers, buiten sweet spot |
-| [MOCK] ShopDirect Eindhoven | Eindhoven | 20 | Pure e-commerce, ander speelveld |
 
 ## Werkwijze gevolgd
 1. Kwalificatie tegen `doelgroep.md` op grootte, regio en branchelijst
@@ -33,8 +37,8 @@ Getoetst aan `00_kern/doelgroep.md` en gescoord met `01_agents/01_sales/template
 
 | | Norm | Nu |
 |---|---|---|
-| Gekwalificeerde namen | 60 | 5 |
-| A-lijst | 15 | 3 |
+| Gekwalificeerde namen | 60 | 0 |
+| A-lijst | 15 | 0 |
 | Benaderd | 60 | 0 |
 | Intakes | 8 | 0 |
 | Scanverkopen | 2 | 0 |

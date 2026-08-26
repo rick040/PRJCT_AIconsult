@@ -20,6 +20,9 @@ Uitzondering: de scan toont aan dat de basis al op orde is.
 ## Welke afdeling eerst
 Kies de afdeling met het hoogste tekstvolume en de meeste herhaling. In de praktijk bijna altijd sales of de binnendienst: offertes, mail, dossiers. Nooit beginnen bij de afdeling met de luidste stem.
 
+## Eigen grens
+Maximaal 6 skills per sprint, dat is het plafond uit de scope hierboven, niet een richtgetal. Bij een zevende skill stopt de sprint en wordt het een nieuwe sprint of een retainerregel, nooit stilzwijgend meegenomen binnen dezelfde prijs.
+
 ## Wat er niet in zit
 - Geen bedrijfsbrede uitrol. Dat is het traject.
 - Geen maatwerksoftware.
