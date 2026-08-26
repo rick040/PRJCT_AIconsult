@@ -1,6 +1,6 @@
 # PRJCT AI — Basisframework
 
-**Versie 1.1 · 25-08-2026 · Rick van Mierlo · Eindhoven/Geldrop**
+**Versie 1.2 · 25-08-2026 · Rick van Mierlo · Eindhoven/Geldrop**
 Status: fundament. Elk hoofdstuk is bedoeld als losse werkmodule die later verder wordt uitgewerkt (eigen agent, eigen skill, eigen deliverable).
 
 ---
@@ -78,7 +78,7 @@ Ladder van laag risico naar hoge waarde:
 | 2 | Bedrijfsfundament | structuur op orde, verplichte basis |
 | 2b | Toolkit Sprint (1 afdeling) | eerste zichtbare oplevering |
 | 3 | Bedrijfsbreed traject | hoofdomzet |
-| 4 | AI-partner retainer | terugkerende omzet |
+| 4 | AI-partner retainer | terugkerende omzet, in gradaties — zie 8.5 |
 | 5 | Toolkit-licenties / open trainingen | schaalbaar, arbeidsarm |
 
 Merkkeuze: opereren onder **PRJCT AI** als aparte lijn binnen PRJCT Agency. Design/web blijft eigen ingang, maar levert wel cross-sell.
@@ -169,7 +169,7 @@ Heeft al wat gebouwd, loopt vast op integratie en op collega's die niet meegaan.
 | 4 | "Alles staat los van onze systemen" | geen koppeling met mail, CRM, Drive | MCP-koppelingen + n8n | AI die hun eigen dossier ophaalt tijdens demo |
 | 5 | "Mag dit wel met onze klantgegevens?" | AVG-onzekerheid | governance-basis + tool-/datakeuze | 1 A4 AI-gebruiksbeleid |
 | 6 | "Elke medewerker doet maar wat" | geen standaard, geen borging | toolkit per afdeling + training + naslag | iedereen werkt vanuit dezelfde skills |
-| 7 | "Het bloedt na twee maanden dood" | geen onderhoud, geen doorontwikkeling | retainer met kwartaalupdate | verlengingspercentage |
+| 7 | "Het bloedt na twee maanden dood" | geen onderhoud, geen doorontwikkeling | retainer met kwartaalupdate, in gradaties (zie 8.5) | verlengingspercentage |
 | 8 | "We hebben overal de AI-knoppen aangezet, maar het levert niks op" | ingebouwde AI-functies vinden geen bruikbare structuur en context | laag 0 en 1: structuur, mappen, eigenaarschap, kennisbestanden | dezelfde AI-knop naast elkaar, vóór en ná het fundament |
 | 9 | "Als Jan weggaat, weet niemand meer hoe het zit" | kennis zit in hoofden en mailboxen, niet in het systeem | vastgelegde domeinen, procesbeschrijvingen, bronwaarheid | nieuwe medewerker werkt binnen een dag mee |
 | 10 | "Elk nieuw document is weer improviseren" | geen naamgeving, geen vaste plek, geen conventie | structuurafspraken die AI en mens allebei volgen | nieuw document is binnen 5 seconden vindbaar en bruikbaar |
@@ -261,7 +261,7 @@ Scan → sprint conversie (doel ≥ 50%) · sprint → retainer conversie (doel 
 | **Bedrijfsfundament** | €2.500 – €5.000 | domeinindeling, procesbeschrijvingen, eigenaarschap, mappen- en naamgevingsstructuur, bronwaarheid, MD-kennisbasis per domein | 3–5 weken |
 | **Toolkit Sprint (1 afdeling)** | €2.500 – €4.500 | 3–6 skills, MD-kennisbasis, 1–2 koppelingen, 2 trainingen, documentatie | 3–4 weken |
 | **Bedrijfsbreed traject** | €7.500 – €15.000 | 3 afdelingen, koppelingen, governance, champion-opleiding, borging | 8–12 weken |
-| **AI-partner retainer** | €750 – €2.000 p/m | onderhoud, nieuwe skills, helpdesk, kwartaalupdate, min. 6 maanden | doorlopend |
+| **AI-partner retainer** | €99 – €2.000 p/m, in 4 gradaties | onderhoud, nieuwe skills, helpdesk, kwartaalupdate — zie 8.5 voor de volledige ladder | doorlopend |
 | **Losse automatisering (n8n)** | €750 – €2.500 | per workflow, inclusief oplevering en documentatie | 1–2 weken |
 | **Toolkit-licentie (branchepakket)** | €350 – €950 | kant-en-klaar pakket, zelf te installeren | direct |
 | **Lokale AI-opstelling** *(nog niet verkopen)* | indicatie €2.500 – €6.000 + hardware | AI op eigen server/hardware, data blijft binnen. Prijs pas vast na eigen proefopstelling | n.t.b. |
@@ -274,7 +274,7 @@ Scan → sprint conversie (doel ≥ 50%) · sprint → retainer conversie (doel 
 - Geldigheid offerte: 14 dagen.
 - Nooit uurtarief noemen. Alles per fase met vaste scope.
 - Meerwerk in blokken van €450 (halve dag).
-- Geen korting; wél scope verkleinen.
+- Geen korting; wél scope verkleinen — dit geldt ook voor de retainer: nooit korting op een trede, wél afschalen naar een lagere trede (zie 8.5).
 
 ### 8.3 Onderbouwing
 Een medewerker van €45k kost het bedrijf circa €65k per jaar. Vier uur tijdwinst per week bij drie medewerkers is ruwweg €25.000 per jaar. Een sprint van €3.500 verdient zich dan binnen twee maanden terug. **Dat sommetje staat in elke offerte, ingevuld met hun eigen cijfers.**
@@ -290,6 +290,34 @@ Een medewerker van €45k kost het bedrijf circa €65k per jaar. Vier uur tijdw
 | **Totaal** | | | **€11.400** |
 
 Benodigde funnel: circa 60 gekwalificeerde contacten → 20 gesprekken → 8 voorstellen → 5 opdrachten. Dat is de sturingsnorm voor de acquisitie.
+
+### 8.5 Retainer-afbouwladder (anti-churn)
+
+**Probleem dat dit oplost:** SWOT-bedreiging 6 — klant heeft na het fundament/sprint zijn AI-gebruik op orde, voelt geen actieve waarde meer maandelijks, en zegt de volledige retainer op. Weg is de terugkerende omzet én het onderhoudscontact.
+
+**Principe:** in plaats van een aan/uit-retainer, vier tredes die in prijs en dienstverlening afbouwen. Bij dreigende opzegging wordt nooit "opzeggen of niets" aangeboden, maar altijd eerst een trede lager. Onderin zit een bodemtrede die zo laag geprijsd is dat de klant er nooit meer bewust over nadenkt — en die desondanks ruim boven Ricks eigen kostprijs (grotendeels geautomatiseerde monitoring, nauwelijks actieve tijd) blijft liggen. Zo loopt de retainer jarenlang door zonder gesprek, terwijl de waarde (werkende koppelingen, geen stille storingen) de prijs ruim overtreft.
+
+| Trede | Naam | Prijs p/m | Inhoud | Voor wie |
+|---|---|---|---|---|
+| 1 | **AI-Partner Groei** | €1.250 – €2.000 | nieuwe skills en koppelingen, actieve doorontwikkeling, helpdesk binnen 1 werkdag, kwartaalworkshop | klant breidt AI-gebruik nog actief uit |
+| 2 | **AI-Partner Onderhoud** | €750 – €950 | onderhoud bestaande skills/koppelingen, helpdesk binnen 2 werkdagen, kwartaalupdate, kleine aanpassingen | gebruik is stabiel, weinig nieuwbouw nodig |
+| 3 | **AI-Basis** | €350 – €450 | maandelijkse health-check van koppelingen en kennisbestanden, mailsupport, 1 kleine aanpassing per kwartaal | klant redt zich grotendeels zelf |
+| 4 | **AI-Vangnet** | €99 – €149 | geautomatiseerde monitoring van MCP-/n8n-koppelingen en kennisbestanden, noodfix binnen 5 werkdagen bij storing, geen actief contact tenzij er iets stukgaat | klant wil (bijna) stoppen |
+
+**Waarom trede 4 werkt als bodem:**
+- Kostprijs voor Rick is bijna nul: monitoring loopt via hetzelfde geautomatiseerde dashboard voor alle vangnet-klanten samen, geen losse arbeidstijd per klant tenzij er een storing is.
+- Waarde voor de klant blijft hoog: koppelingen breken vaak stil (API-wijziging bij de softwareleverancier, aflopend token, gewijzigd model) zonder dat iemand het merkt tot er al weken foute output is gebruikt. €99–149/mnd tegen dat risico is voor een MKB-directie geen bedrag om over te bellen.
+- Vergelijkbaar met een streamingabonnement: te klein om over na te denken, te vervelend om op te zeggen voor het bedrag dat het scheelt.
+
+**Regel voor het gesprek — nooit proactief afschalen aanbieden.** Trede-verlaging wordt alleen ter sprake gebracht wanneer:
+1. de klant zelf aangeeft te willen stoppen of te bezuinigen, of
+2. gebruiksdata (skill-gebruik, supportvragen) over twee opeenvolgende kwartalen structureel onder de drempel van de huidige trede zakt.
+
+Bij zo'n moment is de zin altijd: *"Voordat we het helemaal stopzetten — we kunnen ook terug naar [trede], dat kost bijna niks, maar je koppelingen en kennisbestanden blijven wel gecontroleerd draaien. Zullen we dat doen in plaats van volledig stoppen?"* Nooit zelf het opzeggen voorstellen als eerste optie.
+
+**Reactivatie:** vanuit trede 3 of 4 is opschalen laagdrempelig — geen nieuw traject, gewoon een trede omhoog, ingaand volgende factuurmaand. Dit is het natuurlijke instappunt zodra een klant weer gaat groeien of een nieuwe afdeling erbij pakt.
+
+**Verwerking in KPI's:** retentie meten op twee niveaus — "retainer actief (ongeacht trede)" en "retainer op trede 1–2 (hoogwaardig)". Trede 4-klanten tellen mee voor omzetbehoud, niet voor groei.
 
 ---
 
@@ -326,13 +354,13 @@ Benodigde funnel: circa 60 gekwalificeerde contacten → 20 gesprekken → 8 voo
 3. Prijsdruk door AI-consultants zonder uitvoeringskracht
 4. Snel veranderend landschap maakt toolkits (laag 2 en 3) verouderd
 5. AVG/AI Act-eisen verzwaren richting zakelijke en zorgklanten
-6. Klanten die na het fundament zelf verdergaan en de retainer laten vallen
+6. ~~Klanten die na het fundament zelf verdergaan en de retainer laten vallen~~ — grotendeels ondervangen door de retainer-afbouwladder (8.5): klant valt niet meer op nul, maar zakt naar een bodemtrede die blijft lopen
 
 ### Strategische conclusies
 - **S×O1:** de teleurstelling over ingebouwde AI-knoppen is de scherpste haak in alle content, outreach en het webinar. Openingszin: "Jullie hebben de AI-functies aangezet en er gebeurde weinig. Dat ligt niet aan de AI."
 - **T1×T2:** nooit "structuur" of "organisatie-inrichting" verkopen. Verkoop het als *"AI die eindelijk wél weet waar alles staat"* en toon vóór/ná met dezelfde knop in hun eigen software.
 - **S×O:** eerste twee fundamenten tegen instapprijs bij bestaande klanten, uitsluitend om casussen te maken.
-- **W×T4:** onderhoud en actualiteit inbouwen in de retainer. Laag 0 en 1 veroudert nauwelijks, laag 2 en 3 wel — dat verschil is het argument voor de retainer én voor de opbouw van de prijskaart.
+- **W×T4:** onderhoud en actualiteit inbouwen in de retainer, uitgewerkt als afbouwladder (8.5) zodat de retainer nooit in één keer naar nul valt.
 - **W1:** vanaf klant 5 een vaste freelance-uitvoerder aanhaken voor bouwwerk.
 
 ---
@@ -382,7 +410,7 @@ Opname wordt hergebruikt als contentbron en als leadmagneet.
 4. **Tijdwinst-calculator** — invullen, uitkomst in uren en euro's per jaar
 
 ### 10.6 Salesflow
-Webinar of outreach → intake 30 min (video) → scanvoorstel → scan uitvoeren → presentatie roadmap → sprintvoorstel (verrekening scan) → sprint → 30-dagen-check → retainervoorstel.
+Webinar of outreach → intake 30 min (video) → scanvoorstel → scan uitvoeren → presentatie roadmap → sprintvoorstel (verrekening scan) → sprint → 30-dagen-check → retainervoorstel (starten op trede 1 of 2, zie 8.5).
 
 Vaste opvolging: dag 1 samenvatting, dag 3 casus, dag 7 telefoon, dag 14 laatste voorstel, dag 45 heropening.
 
@@ -426,9 +454,10 @@ Elk blok hieronder wordt later een eigen agent of skill met eigen bestanden en e
 | 6 | **Content-agent** | LinkedIn, nieuwsbrief, landingspagina's | contentkalender, teksten |
 | 7 | **Offerte-agent** | voorstellen op vaste prijskaart | `[Klant]_Offerte_[datum].pdf` |
 | 8 | **Rapportage-agent** | 30/60-dagen-metingen, casussen, KPI-dashboard | resultatenoverzicht, casus |
+| 9 | **Retainer-agent** *(nieuw)* | trede-toewijzing, gebruiksmonitoring per klant, afschaal-/opschaalgesprekken op basis van 8.5 | tredestatus per klant, signalenlijst voor afschaalgesprek |
 
 **Gedeelde basisbestanden (eerst bouwen, alle agents lezen ze):**
-`prijskaart.md` · `personas.md` · `positionering.md` · `usps.md` · `bezwaren-en-antwoorden.md` · `klantdossier-template.md` · `toolkit-standaard.md`
+`prijskaart.md` · `personas.md` · `positionering.md` · `usps.md` · `bezwaren-en-antwoorden.md` · `klantdossier-template.md` · `toolkit-standaard.md` · `retainer-tredes.md`
 
 **Naamgeving:** `[Klant]_[Type]_[Datum]` · nieuwe varianten altijd apart opslaan, nooit overschrijven.
 
@@ -444,6 +473,7 @@ Elk blok hieronder wordt later een eigen agent of skill met eigen bestanden en e
 6. Marktcijfers uit 2.4 hard maken met KvK/Company.info-data.
 7. Lokale AI (1.5): wanneer wordt de eigen proefopstelling ingepland, en op welke hardware? Pas daarna een aanbod formuleren. Tot die tijd alleen benoemen als richting, nooit als dienst.
 8. Naamgeving van het kernproduct: "Bedrijfsfundament", "AI-Fundament" of "AI-Ready Bedrijf"? De naam moet resultaat suggereren, niet structuurwerk — dat laatste klinkt als saai en duur.
+9. Hoe wordt de vangnet-monitoring (trede 4, 8.5) technisch gebouwd — losse n8n-workflow per klant of één gedeeld monitoring-dashboard over alle vangnet-klanten? Bepaalt de echte kostprijs van de bodemtrede.
 
 ---
 

@@ -10,6 +10,17 @@ Drie skills die we publiek weggeven als leadmagneet en die tegelijk het startpun
 | `operations-mailtriage.md` | operations | Iedereen herkent het, geen data nodig om te demonstreren |
 | `finance-factuurcontrole.md` | finance | Meetbaar en foutgevoelig, dus het faalgedrag is het verhaal |
 
+## Verwarring voorkomen met `../01_skills/`
+
+Naast deze map staat `01_agents/03_toolkit-builder/output/01_skills/` met voorbeelduitvoer voor de mock-klant Van Hoof. Die bestanden laten zien hoe een klanttoolkit eruitziet, ingevuld met één specifiek bedrijf erin.
+
+Deze map is iets anders: generiek, zonder klant, bedoeld om weg te geven. `sales-offerte-opstellen.md` bestaat in allebei de mappen en dat is geen duplicaat maar een verschil in doel.
+
+| Map | Doel | Klant erin |
+|---|---|---|
+| `01_skills/` | Laten zien hoe een opgeleverde toolkit eruitziet | Ja, mock-klant |
+| `proef-toolkit/` | Weggeven als leadmagneet, startpunt bij elke klant | Nee |
+
 ## Weg naar de bibliotheek
 
 ```
