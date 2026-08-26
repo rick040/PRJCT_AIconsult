@@ -53,4 +53,4 @@ Bijna elke prospect heeft de AI-functies in zijn eigen software al aangezet en i
 
 PRJCT AI is een aparte lijn binnen PRJCT Agency. Design en web blijven een eigen ingang en leveren cross-sell.
 
-`[TE BEPALEN: definitieve merknaamkeuze, zie 05_bedrijf/framework/open-beslissingen.md]`
+**Beslist 2026-08-26:** PRJCT AI blijft een lijn binnen PRJCT Agency, geen eigen merk. Zie `05_bedrijf/framework/open-beslissingen.md`, beslissing 1.

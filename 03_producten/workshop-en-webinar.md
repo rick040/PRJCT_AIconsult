@@ -35,6 +35,9 @@ Eén dagdeel bij de klant, tot 15 deelnemers. Praktijkgericht: ze werken aan hun
 
 **Naslag:** elke deelnemer gaat naar huis met de werkinstructies die ze zelf hebben gemaakt. Dat is het bewijs dat dit geen praatje was.
 
+## Eigen grens
+Voor één dagdeel rijdt Rick tot circa 45 minuten enkele reis vanaf Eindhoven/Geldrop, dus binnen de Brainport-regio zoals gedefinieerd in `00_kern/positionering.md`. Daarbuiten alleen bij een dagdeel dat aansluit op een tweede afspraak diezelfde dag, anders wordt het online aangeboden.
+
 ## Regel
 Het webinar en de workshop verkopen nooit een tool. Ze verkopen het inzicht dat de laag eronder ontbreekt. De vervolgstap is altijd de intake of de scan.
 
