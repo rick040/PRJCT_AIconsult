@@ -1,4 +1,4 @@
-# Post — Offerte in 4 minuten [MOCK, voorbeelduitvoer]
+# Post: Offerte in 4 minuten [MOCK, voorbeelduitvoer]
 
 **Persona:** Bas
 **Pijler:** laten zien

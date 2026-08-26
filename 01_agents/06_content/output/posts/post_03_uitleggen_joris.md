@@ -1,4 +1,4 @@
-# Post — Wat is een skill eigenlijk [MOCK, voorbeelduitvoer]
+# Post: Wat is een skill eigenlijk [MOCK, voorbeelduitvoer]
 
 **Persona:** Joris
 **Pijler:** uitleggen

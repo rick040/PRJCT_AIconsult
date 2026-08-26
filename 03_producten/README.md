@@ -4,9 +4,9 @@
 
 Drie regels die we actief aanbieden:
 
-1. **Scan** — `ai-readiness-scan.md`
-2. **Startpakket** (Bedrijfsfundament + Toolkit Sprint) — `bedrijfsfundament.md` + `toolkit-sprint.md`
-3. **Retainer, trede 1** (AI-Partner Groei) — `retainer.md`
+1. **Scan**: `ai-readiness-scan.md`
+2. **Startpakket** (Bedrijfsfundament + Toolkit Sprint): `bedrijfsfundament.md` + `toolkit-sprint.md`
+3. **Retainer, trede 1** (AI-Partner Groei): `retainer.md`
 
 De rest (workshop/webinar, lokale AI, retainertredes 2 tot en met 4) is antwoord op een vraag, geen actief aanbod.
 

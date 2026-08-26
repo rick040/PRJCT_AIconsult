@@ -17,11 +17,11 @@ Een pijler, een casus, een klantvraag die vaker terugkomt, een webinaropname.
 
 ## Contentpijlers
 
-1. **Laten zien** — korte demo van één skill met resultaat: "offerte in 4 minuten in plaats van 40"
-2. **Ontnuchteren** — wat AI in het MKB níet doet, mislukte pilots, waarom tools blijven liggen
-3. **Uitleggen** — skills, MD-bestanden, MCP en toolkits in mensentaal
-4. **Bewijzen** — casussen, cijfers, klantcitaten
-5. **Meekijken** — bouwen in de openbaarheid, eigen werkwijze delen
+1. **Laten zien**: korte demo van één skill met resultaat: "offerte in 4 minuten in plaats van 40"
+2. **Ontnuchteren**: wat AI in het MKB níet doet, mislukte pilots, waarom tools blijven liggen
+3. **Uitleggen**: skills, MD-bestanden, MCP en toolkits in mensentaal
+4. **Bewijzen**: casussen, cijfers, klantcitaten
+5. **Meekijken**: bouwen in de openbaarheid, eigen werkwijze delen
 
 ## Werkwijze
 

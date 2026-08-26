@@ -1,4 +1,4 @@
-# Webinar-draaiboek — "Jullie hebben de AI-knoppen aangezet. Waarom er niks gebeurt."
+# Webinar-draaiboek: "Jullie hebben de AI-knoppen aangezet. Waarom er niks gebeurt."
 
 **Ritme:** maandelijks · **Norm per editie:** 25 aanmeldingen, 12 aanwezigen, 4 intakes, 1 tot 2 scans
 **Alternatieve titel voor koudere lijsten:** "AI invoeren met 10 tot 25 medewerkers: waar begin je?"

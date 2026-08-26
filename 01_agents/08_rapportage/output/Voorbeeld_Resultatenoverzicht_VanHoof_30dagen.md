@@ -1,4 +1,4 @@
-# Resultaten na 30 dagen — Van Hoof Installaties [MOCK, voorbeelduitvoer]
+# Resultaten na 30 dagen: Van Hoof Installaties [MOCK, voorbeelduitvoer]
 
 **Datum:** 2026-11-19 · **Gemeten door:** Rick van Mierlo · **Champion bij klant:** Wendy Smulders
 

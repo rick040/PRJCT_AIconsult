@@ -1,4 +1,4 @@
-# Sales — Koude opvolging, cadans
+# Sales: Koude opvolging, cadans
 
 **Eigenaar:** PRJCT AI · **Laatst bijgewerkt:** 2026-08-25 · **Getest op:** `[TE BEPALEN: nog niet getest op een echte klantcasus]`
 
@@ -19,11 +19,11 @@ Zet het vaste opvolgritme uit `01_agents/01_sales/AGENT.md` om in een stap-voor-
 - Datum van het laatste contactmoment
 
 ## Stappen
-1. **Dag 1 — samenvatting.** Kort bericht, één zin over wat er besproken is, geen nieuwe informatie. Doel: bevestigen dat het klopt wat er is afgesproken.
-2. **Dag 3 — casus.** Iets concreets delen dat bij hun situatie past: een voorbeeld uit `usps.md` of een relevante contentpost. Geen "even checken of je mijn bericht hebt gezien".
-3. **Dag 7 — telefoon.** Niet nog een bericht, echt bellen. Eén vraag klaar hebben, niet een pitch.
-4. **Dag 14 — laatste voorstel.** Concreet: een intake van 30 minuten, met twee voorgestelde tijdstippen. Geen open "wanneer schikt het".
-5. **Dag 45 — heropening.** Alleen als er niets meer volgde. Nieuwe haak nodig, niet dezelfde tekst opnieuw sturen. Geen haak gevonden: prospect blijft op "wachtend", niet opnieuw benaderen.
+1. **Dag 1: samenvatting.** Kort bericht, één zin over wat er besproken is, geen nieuwe informatie. Doel: bevestigen dat het klopt wat er is afgesproken.
+2. **Dag 3: casus.** Iets concreets delen dat bij hun situatie past: een voorbeeld uit `usps.md` of een relevante contentpost. Geen "even checken of je mijn bericht hebt gezien".
+3. **Dag 7: telefoon.** Niet nog een bericht, echt bellen. Eén vraag klaar hebben, niet een pitch.
+4. **Dag 14: laatste voorstel.** Concreet: een intake van 30 minuten, met twee voorgestelde tijdstippen. Geen open "wanneer schikt het".
+5. **Dag 45: heropening.** Alleen als er niets meer volgde. Nieuwe haak nodig, niet dezelfde tekst opnieuw sturen. Geen haak gevonden: prospect blijft op "wachtend", niet opnieuw benaderen.
 6. **Na elk moment:** bijwerken in `pijplijn.md`, met de eerstvolgende actie en datum. Nooit een lege kolom "volgende actie" achterlaten.
 
 ## Wat komt eruit

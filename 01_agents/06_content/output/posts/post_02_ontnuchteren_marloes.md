@@ -1,4 +1,4 @@
-# Post — De AI-knop deed niets [MOCK, voorbeelduitvoer]
+# Post: De AI-knop deed niets [MOCK, voorbeelduitvoer]
 
 **Persona:** Marloes
 **Pijler:** ontnuchteren

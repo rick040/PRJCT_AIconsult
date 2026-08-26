@@ -1,4 +1,4 @@
-# Post — [onderwerp] [MOCK]
+# Post: [onderwerp] [MOCK]
 
 **Persona:** [Bas / Marloes / Joris]
 **Pijler:** [laten zien / ontnuchteren / uitleggen / bewijzen / meekijken]

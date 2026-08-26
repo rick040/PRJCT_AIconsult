@@ -1,4 +1,4 @@
-# AI Readiness Scan — [Klant] [MOCK]
+# AI Readiness Scan: [Klant] [MOCK]
 
 **Datum:** [datum] · **Uitgevoerd door:** Rick van Mierlo · **Contactpersoon:** [naam]
 

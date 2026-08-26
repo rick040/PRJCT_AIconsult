@@ -1,4 +1,4 @@
-# Klantdossier — [KLANTNAAM]
+# Klantdossier: [KLANTNAAM]
 
 > Kopie dit bestand naar `02_klanten/[Klant]/klantdossier.md` bij elke nieuwe klant.
 > Elke agent leest dit dossier voordat hij iets voor deze klant maakt.
@@ -80,4 +80,4 @@
 
 ## 9. Gespreksnotities
 
-**[datum]** —
+**[datum]**:

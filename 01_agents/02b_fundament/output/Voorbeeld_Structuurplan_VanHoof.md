@@ -1,4 +1,4 @@
-# Structuurplan — Van Hoof Installaties [MOCK, voorbeelduitvoer]
+# Structuurplan: Van Hoof Installaties [MOCK, voorbeelduitvoer]
 
 **Datum:** 2026-10-05 · **Interne eigenaar bij klant:** Wendy Smulders (planner)
 
@@ -13,7 +13,7 @@ Vier scherpe domeinen, geen zes vage. Marketing en HR zijn bij Van Hoof geen apa
 | Sales | Bas van Hoof | Offerteaanvraag verwerken, offerte opstellen, opvolgen, order vastleggen | Outlook, Word, website-contactformulier |
 | Operations | Wendy Smulders | Planning inplannen, werkbon uitwerken, materiaal bestellen | Outlook-agenda, papieren werkbon (foto via WhatsApp) |
 | Finance | Bas van Hoof (extern: boekhouder) | Factureren, inkoopfacturen verwerken | Boekhoudpakket (extern beheerd) |
-| Directie | Bas van Hoof | Jaarplanning, personeel, grote inkoop | — |
+| Directie | Bas van Hoof | Jaarplanning, personeel, grote inkoop | n.v.t. |
 
 ## 2. Bronwaarheid per kerngegeven
 
@@ -23,7 +23,7 @@ Vier scherpe domeinen, geen zes vage. Marketing en HR zijn bij Van Hoof geen apa
 | Prijzen en tarieven | Nieuw: `03_bedrijfskennis/diensten-en-prijzen.md` | Niet meer in Bas' hoofd of het Excel-bestand uit 2023 | Bas |
 | Offertes | `02_klanten/[klantnaam]/01_offertes/` | Niet meer los in de mailbox | Bas |
 | Projectstatus | Wendy's planningsoverzicht (nieuw, één bestand) | Niet meer los bij Bas en Wendy apart | Wendy |
-| Personeelsgegevens | Boekhoudpakket / extern administratiekantoor | — | Bas |
+| Personeelsgegevens | Boekhoudpakket / extern administratiekantoor | n.v.t. | Bas |
 
 ## 3. Mappenstructuur
 

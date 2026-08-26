@@ -1,6 +1,6 @@
 # Waarom het framework hier ligt
 
-`PRJCT_AI_Business_Framework_20260825.md` stond in de hoofdmap van de repo en was een tweede kopie van `05_bedrijf/framework/basisframework.md`.
+`PRJCT_AI_Business_Framework_20260825_gearchiveerd_2026-08-26.md` stond in de hoofdmap van de repo en was een tweede kopie van `05_bedrijf/framework/basisframework.md`.
 
 Op 2026-08-26 waren die twee uit elkaar gelopen: de kopie in de hoofdmap stond op v1.2 met de retainer-afbouwladder, de kopie in `05_bedrijf/framework/` nog op v1.1 zonder. Twee bronnen voor hetzelfde document betekent dat iemand vroeg of laat de verkeerde leest.
 

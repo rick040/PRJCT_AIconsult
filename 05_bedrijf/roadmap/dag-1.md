@@ -1,5 +1,7 @@
 # Dag 1
 
+**Status: afgerond op 2026-08-26.** De vier beslissingen staan met datum en besluit in `open-beslissingen.md`, PR #2 is gemerged. Dit bestand blijft staan als uitgevoerd draaiboek, niet als openstaande taken.
+
 **Doel van vandaag:** vier beslissingen dicht, het aanbod bevroren, en tien echte namen op papier.
 **Tijd:** ongeveer 5 uur. Alles heeft een klok, want anders eet taak 2 de hele dag op.
 
