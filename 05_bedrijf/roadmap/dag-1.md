@@ -137,8 +137,6 @@ De enige taak van vandaag die richting omzet beweegt.
 
 ---
 
-## Dag 2, zodat je het niet hoeft te bedenken
+## Dag 2
 
-1. De vóór/ná-demo opzetten: welke opstelling, op welke voorbeelddata (2 uur)
-2. Vacaturesites afzoeken op administratief werk in de regio, 10 namen erbij (1 uur)
-3. Beslissing 4 sluiten: webinar via eigen platform of via een partner (30 min)
+Uitgewerkt in `05_bedrijf/roadmap/dag-2.md`: de vóór/ná-demo bouwen, tien namen erbij via vacaturesites, en beslissing 4 sluiten.
