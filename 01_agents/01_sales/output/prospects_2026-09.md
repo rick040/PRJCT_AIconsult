@@ -1,4 +1,4 @@
-# Prospectlijst [MOCK] — september 2026
+# Prospectlijst [MOCK] september 2026
 
 Getoetst aan `00_kern/doelgroep.md` en gescoord met `01_agents/01_sales/templates/kwalificatie-scorekaart.md`. Afgewezen bedrijven blijven staan met reden, ze worden niet verwijderd.
 

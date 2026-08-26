@@ -1,4 +1,4 @@
-# Contentkalender — september 2026 [MOCK, voorbeelduitvoer]
+# Contentkalender september 2026 [MOCK, voorbeelduitvoer]
 
 Ritme: 3 posts per week, nieuwsbrief 2x per maand. Elk stuk kiest één persona en één pijler, zie `01_agents/06_content/AGENT.md`.
 
