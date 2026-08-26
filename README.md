@@ -22,9 +22,9 @@ Werkrepo van de AI-implementatielijn van PRJCT Agency. Rick van Mierlo, Eindhove
 └── 99_archief/            # verouderd, niets wordt verwijderd
 ```
 
-## 00_kern — begin hier
+## 00_kern: begin hier
 
-Deze zeven bestanden bepalen alles wat er verder gebeurt. Verander je hier iets, dan verandert het overal.
+Deze tien bestanden bepalen alles wat er verder gebeurt. Verander je hier iets, dan verandert het overal.
 
 | Bestand | Waarvoor |
 |---|---|
@@ -39,7 +39,7 @@ Deze zeven bestanden bepalen alles wat er verder gebeurt. Verander je hier iets,
 | `klantdossier-template.md` | het dossier per klant |
 | `toolkit-standaard.md` | hoe elke klanttoolkit eruitziet |
 
-## 01_agents — de negen agents
+## 01_agents: de negen agents
 
 | # | Agent | Verantwoordelijkheid | Output |
 |---|---|---|---|
@@ -68,10 +68,16 @@ Elke agentmap bevat `AGENT.md` (rol, input, output, werkwijze, kwaliteitseisen, 
 
 Fase: opbouw. Bestanden met `[MOCK]` in de titel of `[TE BEPALEN: ...]` in de tekst zijn skeletten en voorbeelden. Vervangen zodra er echt materiaal is. Nooit als feit richting een klant gebruiken.
 
+## Waar je begint als je vandaag gaat werken
+
+1. `05_bedrijf/roadmap/dag-1.md` als je nog moet starten. Zeven taken, ongeveer vijf uur
+2. `05_bedrijf/roadmap/routekaart.md` voor de volgorde daarna: zes blokken van idee naar draaiende praktijk
+3. `05_bedrijf/framework/basisframework.md` als je de onderbouwing wilt lezen. Dat is geen stappenplan
+
 ## Volgende stappen
 
 - [ ] Open beslissingen doorhakken, zie `05_bedrijf/framework/open-beslissingen.md`
 - [ ] Twee casusklanten kiezen
-- [ ] Eerste echte skills in `04_bibliotheek/skills/`
+- [ ] Eerste klantskills in `04_bibliotheek/skills/`, na de eerste klant. Zie de twee categorieën in `04_bibliotheek/README.md`
 - [ ] Vóór/ná-demo bouwen als bewijsmiddel
 - [ ] Proefopstelling lokale AI inplannen
