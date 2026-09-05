@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Het AI-Fundament</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F3EA;
+  --paper-2:#ECE7D8;
+  --paper-3:#E3DDC9;
+  --ink:#152238;
+  --steel:#5E6B72;
+  --rule:rgba(21,34,56,.14);
+  --blueprint:#173B63;
+  --blueprint-2:#0E2745;
+  --blueprint-3:#0A1D36;
+  --cyan-line:#9FCBEA;
+  --cyan-dim:rgba(159,203,234,.35);
+  --brass:#C8862F;
+  --brass-bright:#E0A24B;
+  --on-blueprint:#EFEAD9;
+  --on-blueprint-dim:#AEC0D2;
+  --shadow:0 1px 2px rgba(15,25,42,.06);
+
+  --fs-body:clamp(1.0625rem,1rem + .3vw,1.1875rem);
+  --fs-lead:clamp(1.1875rem,1.05rem + .7vw,1.5rem);
+  --fs-h3:clamp(1.25rem,1.15rem + .5vw,1.5rem);
+  --fs-h2:clamp(1.75rem,1.4rem + 1.7vw,2.75rem);
+  --fs-h1:clamp(2.5rem,1.85rem + 3.6vw,4.5rem);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#12161C;
+    --paper-2:#1A1F27;
+    --paper-3:#232A33;
+    --ink:#EDE8DA;
+    --steel:#98A3A6;
+    --rule:rgba(237,232,218,.14);
+    --on-blueprint:#F2EEE1;
+    --shadow:0 1px 2px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#12161C;
+  --paper-2:#1A1F27;
+  --paper-3:#232A33;
+  --ink:#EDE8DA;
+  --steel:#98A3A6;
+  --rule:rgba(237,232,218,.14);
+  --on-blueprint:#F2EEE1;
+  --shadow:0 1px 2px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Public Sans",system-ui,sans-serif;font-size:var(--fs-body);line-height:1.62;
+}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.015em;
+  margin:0;text-wrap:balance}
+h1{font-size:var(--fs-h1);font-weight:600;letter-spacing:-.02em}
+h2{font-size:var(--fs-h2)}
+h3{font-size:var(--fs-h3);line-height:1.2}
+p{margin:0 0 1rem;max-width:60ch}
+a{color:inherit}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:clamp(3.5rem,7vw,6.5rem) 0}
+.sheet-id{font-family:"IBM Plex Mono";font-size:.75rem;letter-spacing:.1em;color:var(--steel);
+  display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;text-transform:uppercase}
+.sheet-id::before{content:"";width:22px;height:1px;background:var(--brass)}
+.lead{font-size:var(--fs-lead);line-height:1.45;max-width:38ch}
+.muted{color:var(--steel)}
+.grid{display:grid;gap:2.25rem}
+@media(min-width:900px){
+  .grid{grid-template-columns:minmax(0,7fr) minmax(0,4.2fr);gap:4rem;align-items:start}
+}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* --- shared: field card, blueprint sheet motif with corner registration marks --- */
+.sheet{position:relative;border:1px solid var(--rule);border-radius:2px;background:var(--paper-2);
+  padding:26px}
+.sheet::before,.sheet::after,.sheet .reg-br,.sheet .reg-tr{content:"";position:absolute;width:9px;height:9px;
+  border:1px solid var(--brass);opacity:.7}
+.sheet::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.sheet::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+
+.btn{
+  font-family:"IBM Plex Mono";font-weight:500;font-size:.9375rem;letter-spacing:.01em;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;
+  padding:0 26px;border-radius:3px;text-decoration:none;cursor:pointer;border:1px solid transparent;
+}
+.btn-brass{background:var(--brass);color:#1B1305}
+.btn-brass:hover{background:var(--brass-bright)}
+.btn-line{background:transparent;color:var(--on-blueprint);border-color:rgba(239,234,217,.4)}
+.btn-line:hover{border-color:var(--on-blueprint);background:rgba(239,234,217,.06)}
+.btn-ink{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ink:hover{background:var(--paper-2)}
+
+/* --- topbar --- */
+.topbar{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--rule)}
+.brandbar{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces";font-weight:600;font-size:1.0625rem;
+  letter-spacing:-.01em}
+.brand-mark{width:26px;height:26px;flex:none}
+.brandbar .btn{min-height:42px;padding:0 18px;font-size:.8125rem}
+
+/* --- hero: blueprint panel --- */
+.hero-panel{
+  position:relative;overflow:hidden;border-radius:10px;margin-top:28px;
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(159,203,234,.16), transparent 60%),
+    linear-gradient(155deg,var(--blueprint) 0%,var(--blueprint-2) 62%,var(--blueprint-3) 100%);
+  color:var(--on-blueprint);padding:clamp(2.25rem,5vw,3.75rem) clamp(1.5rem,5vw,3.5rem) 0;
+}
+.grid-overlay{position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background-image:
+    linear-gradient(var(--cyan-dim) 1px,transparent 1px),
+    linear-gradient(90deg,var(--cyan-dim) 1px,transparent 1px);
+  background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+.hero-inner{position:relative}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono";font-size:.75rem;
+  letter-spacing:.1em;color:var(--cyan-line);text-transform:uppercase;border:1px solid rgba(159,203,234,.35);
+  border-radius:20px;padding:6px 14px 6px 10px;margin-bottom:1.75rem}
+.hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--brass-bright)}
+.hero-panel h1{color:#fff;max-width:15ch}
+.hero-panel .lead{color:var(--on-blueprint-dim);margin:1.5rem 0 2.25rem}
+.cta-row{display:flex;flex-direction:column;gap:12px}
+@media(min-width:560px){.cta-row{flex-direction:row;align-items:center}}
+.undercta{font-family:"IBM Plex Mono";font-size:.8125rem;color:var(--on-blueprint-dim);margin-top:16px}
+.hero-fig{position:relative;margin:clamp(2.5rem,6vw,4rem) -8px 0}
+.hero-fig svg{display:block;width:100%;height:auto}
+.trustrow{padding:22px 0 26px;border-top:1px solid var(--rule)}
+.trustrow-label{font-family:"IBM Plex Mono";font-size:.75rem;letter-spacing:.08em;color:var(--steel);
+  text-transform:uppercase;margin-bottom:14px}
+.toolchips{display:flex;flex-wrap:wrap;gap:10px}
+.toolchip{font-family:"IBM Plex Mono";font-size:.8125rem;border:1px solid var(--rule);border-radius:20px;
+  padding:6px 14px;color:var(--steel)}
+
+/* --- moments (situatie) --- */
+.moments{list-style:none;padding:0;margin:1.75rem 0 0;display:grid;gap:10px}
+.moment{display:flex;gap:14px;padding:16px 18px;border:1px solid var(--rule);border-radius:6px;
+  background:var(--paper-2);align-items:flex-start}
+.moment .n{font-family:"IBM Plex Mono";font-size:.8125rem;color:var(--brass);flex:none;padding-top:2px}
+.moment p{margin:0}
+.note{padding:22px 22px 20px;background:var(--paper-2);border-left:3px solid var(--brass);border-radius:0 6px 6px 0}
+.note strong{font-family:"IBM Plex Mono";font-weight:600;font-size:.75rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink);display:block;margin-bottom:8px}
+.note + .note{margin-top:1.25rem}
+
+/* --- grens split --- */
+.split{display:grid;gap:14px}
+@media(min-width:640px){.split{grid-template-columns:1fr 1fr;gap:18px}}
+.split-col{border-radius:8px;padding:22px}
+.split-col.do{border:1px solid var(--rule);background:var(--paper-2)}
+.split-col.dont{border:1px dashed var(--rule);background:transparent}
+.col-h{font-family:"IBM Plex Mono";font-weight:600;font-size:.75rem;letter-spacing:.1em;
+  text-transform:uppercase;padding-bottom:10px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.col-h.do{color:var(--brass)}
+.col-h.dont{color:var(--steel)}
+.split ul{list-style:none;padding:0;margin:0}
+.split li{padding:9px 0;font-size:1rem;line-height:1.4;border-bottom:1px solid var(--rule)}
+.split li:last-child{border-bottom:0}
+.dont li{color:var(--steel);text-decoration:line-through;text-decoration-color:var(--rule)}
+
+/* --- fundament diagram --- */
+.diagram{border-radius:10px;overflow:hidden;background:linear-gradient(160deg,var(--blueprint),var(--blueprint-3));
+  padding:clamp(1.5rem,4vw,2.5rem);margin:2.25rem 0 2.75rem;position:relative}
+.diagram svg{display:block;width:100%;height:auto;position:relative}
+.pillars{display:grid;gap:1.5rem;margin-top:2rem}
+@media(min-width:760px){.pillars{grid-template-columns:repeat(3,1fr);gap:1.75rem}}
+.pillar{padding:22px;border:1px solid var(--rule);border-radius:8px;background:var(--paper-2)}
+.pillar .icon{width:34px;height:34px;margin-bottom:14px;color:var(--brass)}
+.pillar h3{margin-bottom:.5rem;font-size:1.1875rem}
+
+/* --- weken ruler --- */
+.weeks{list-style:none;padding:0 0 0 26px;margin:2rem 0 0;position:relative;border-left:2px solid var(--rule)}
+.weeks li{position:relative;padding:0 0 1.9rem 26px}
+.weeks li:last-child{padding-bottom:0}
+.weeks li::before{content:"";position:absolute;left:-33px;top:2px;width:14px;height:14px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--brass)}
+.weeks .wk{font-family:"IBM Plex Mono";font-size:.75rem;letter-spacing:.08em;color:var(--brass);
+  text-transform:uppercase;display:block;margin-bottom:4px}
+.weeks h3{font-size:1.0625rem;margin-bottom:3px}
+.weeks p{margin:0;font-size:1rem;color:var(--steel);line-height:1.45}
+
+/* --- deliverables --- */
+.deliv{list-style:none;padding:0;margin:2rem 0 0;display:grid;gap:0}
+.deliv li{padding:1rem 0;border-bottom:1px solid var(--rule);display:flex;gap:16px;align-items:baseline}
+.deliv li:first-child{border-top:1px solid var(--rule)}
+.deliv .d{font-family:"IBM Plex Mono";font-size:.6875rem;color:#fff;background:var(--blueprint);
+  letter-spacing:.05em;padding:3px 8px;border-radius:3px;min-width:76px;text-align:center;flex:none}
+
+/* --- meter --- */
+.meter{padding:24px}
+.ctrl{margin-bottom:20px}
+.ctrl label{display:flex;justify-content:space-between;align-items:baseline;
+  font-family:"IBM Plex Mono";font-size:.8125rem;font-weight:500;margin-bottom:10px}
+.ctrl output{font-weight:600;font-size:1rem;font-variant-numeric:tabular-nums;color:var(--brass)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:26px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:3px;background:var(--rule);border-radius:2px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+  background:var(--brass);margin-top:-9.5px;border:3px solid var(--paper-2)}
+input[type=range]::-moz-range-track{height:3px;background:var(--rule);border-radius:2px}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border:3px solid var(--paper-2);border-radius:50%;background:var(--brass)}
+.result{border-top:1px solid var(--rule);padding-top:18px;margin-top:6px}
+.result .kicker{font-family:"IBM Plex Mono";font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--steel)}
+.result .big{font-family:"Fraunces";font-weight:600;font-size:clamp(2.25rem,8vw,3rem);
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums;display:block;line-height:1.05;margin-top:6px}
+.bars{margin-top:18px}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-family:"IBM Plex Mono";font-size:.75rem}
+.bar-row span:first-child{min-width:92px;color:var(--steel)}
+.bar{height:13px;border-radius:2px;transition:width .25s ease}
+.bar-a{background:var(--ink)}
+.bar-b{background:var(--brass)}
+.formula{font-family:"IBM Plex Mono";font-size:.75rem;color:var(--steel);
+  line-height:1.6;margin-top:16px;word-break:break-word;padding-top:14px;border-top:1px dashed var(--rule)}
+
+/* --- pricing --- */
+.tiers{display:grid;gap:18px;margin-top:2.5rem}
+@media(min-width:880px){.tiers{grid-template-columns:repeat(3,1fr)}}
+.tier{border:1px solid var(--rule);border-radius:10px;padding:26px;background:var(--paper-2);display:flex;flex-direction:column}
+.tier.primary{border:1px solid var(--brass);background:var(--paper);box-shadow:0 8px 24px -12px rgba(200,134,47,.35)}
+.tier .name{font-family:"Fraunces";font-weight:600;font-size:1.1875rem;margin-bottom:6px}
+.tier .price{font-family:"IBM Plex Mono";font-weight:600;font-size:1.875rem;letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums;margin:10px 0 2px;color:var(--ink)}
+.tier .sub{font-size:.9375rem;color:var(--steel);margin-bottom:16px}
+.tier ul{list-style:none;padding:0;margin:0 0 20px;font-size:.9375rem;flex:1}
+.tier li{padding:7px 0;border-bottom:1px solid var(--rule);line-height:1.35}
+.tier li:last-child{border-bottom:0}
+.tier .btn{width:100%}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--brass);color:#1B1305;font-family:"IBM Plex Mono";
+  font-size:.6875rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:12px}
+.tier4-note{margin-top:22px;font-size:.9375rem;color:var(--steel);padding-top:16px;border-top:1px solid var(--rule)}
+
+/* --- guarantee --- */
+.guarantee{border-radius:10px;padding:clamp(2rem,5vw,3.25rem);position:relative;overflow:hidden;
+  background:radial-gradient(ellipse 700px 400px at 85% 0%, rgba(159,203,234,.12), transparent 60%),
+    linear-gradient(160deg,var(--blueprint),var(--blueprint-3));color:var(--on-blueprint)}
+.guarantee .sheet-id{color:var(--on-blueprint-dim)}
+.guarantee .sheet-id::before{background:var(--brass-bright)}
+.guarantee h2{color:#fff;max-width:16ch}
+.guarantee .lead{color:var(--on-blueprint-dim);max-width:48ch}
+.cap{font-family:"IBM Plex Mono";font-size:.875rem;color:var(--brass-bright);margin-top:26px;display:block}
+
+/* --- proof --- */
+.ph{border:1px dashed var(--rule);border-radius:8px;padding:18px;color:var(--steel);
+  font-family:"IBM Plex Mono";font-size:.8125rem;line-height:1.5}
+
+/* --- scorecard --- */
+.card{background:var(--paper-2);border:1px solid var(--rule);border-radius:10px;padding:26px}
+.q{font-family:"Fraunces";font-weight:600;font-size:1.1875rem;line-height:1.3;margin-bottom:18px}
+.opts{display:grid;gap:9px}
+.opt{font-family:"Public Sans";font-size:.9375rem;text-align:left;padding:14px 16px;min-height:52px;
+  border:1px solid var(--rule);border-radius:6px;background:var(--paper);cursor:pointer;line-height:1.3;color:var(--ink)}
+.opt:hover{border-color:var(--brass);background:var(--paper-2)}
+.progress{font-family:"IBM Plex Mono";font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--steel);margin-bottom:12px}
+.scorebar{height:20px;background:var(--paper);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin:16px 0}
+.scorebar span{display:block;height:100%;background:var(--brass);width:0;transition:width .5s ease}
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field label{font-family:"IBM Plex Mono";font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.04em}
+.field input{font-family:"Public Sans";font-size:1rem;padding:13px 14px;border:1px solid var(--rule);
+  border-radius:6px;background:var(--paper);color:var(--ink);min-height:50px}
+.field input:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
+.hp{position:absolute;left:-9999px}
+.err{color:#B3492A;font-size:.875rem;font-family:"IBM Plex Mono"}
+
+/* --- faq --- */
+details{border-bottom:1px solid var(--rule);padding:1.1rem 0}
+details:first-of-type{border-top:1px solid var(--rule)}
+summary{font-family:"Fraunces";font-weight:600;font-size:1.0625rem;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;gap:16px;line-height:1.3}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--brass);font-weight:400;font-size:1.5rem;line-height:1;font-family:"IBM Plex Mono"}
+details[open] summary::after{content:"\2013"}
+details p{margin:14px 0 0;color:var(--steel);font-size:1rem;max-width:62ch}
+
+/* --- footer / sticky --- */
+.slot{padding-bottom:8rem}
+footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Plex Mono";
+  font-size:.8125rem;color:var(--steel)}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--paper);
+  border-top:1px solid var(--rule);padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;align-items:center;z-index:20}
+.sticky .btn{flex:1;min-height:48px;font-size:.875rem}
+.sticky .p{font-family:"IBM Plex Mono";font-size:.75rem;color:var(--steel);line-height:1.25}
+.sticky .p b{color:var(--ink);font-size:.9375rem}
+@media(min-width:900px){.sticky{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brandbar">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <path d="M13 2 L23 8 V18 L13 24 L3 18 V8 Z" stroke="var(--ink)" stroke-width="1.4"/>
+          <path d="M13 2 V24 M3 8 L23 18 M23 8 L3 18" stroke="var(--brass)" stroke-width="1.2"/>
+        </svg>
+        Het AI-Fundament
+      </div>
+      <a class="btn btn-ink" href="#prijs">Plan de scan in</a>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+<section class="hero" aria-labelledby="h-hero" style="border-top:0;padding-top:clamp(1.5rem,4vw,2.5rem)">
+  <div class="hero-panel">
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <span class="hero-tag"><span class="dot"></span>Werkmaatschappij van [bureau]</span>
+      <h1 id="h-hero">Je mensen gebruiken al AI. Alleen niet met jullie informatie.</h1>
+      <p class="lead">In zes weken werkt elke medewerker met AI op jullie echte dossiers, onder regels die jij bepaalt. Aantoonbaar, ook aan een klant of auditor.</p>
+      <div class="cta-row">
+        <a class="btn btn-brass" href="#prijs">Plan de scan in →</a>
+        <a class="btn btn-line" href="#scorecard">Doe eerst de scorecard</a>
+      </div>
+      <p class="undercta">SCAN — 2 WEKEN — €1.950 VAST — VOLLEDIG VERREKEND BIJ VERVOLG</p>
+
+      <div class="hero-fig" aria-hidden="true">
+        <svg viewBox="0 0 1040 260" role="img" aria-label="Doorsnede van drie gestapelde funderingslagen: taxonomie, rechten en context, oplopend naar een gebouw">
+          <defs>
+            <linearGradient id="soilA" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#9FCBEA" stop-opacity=".22"/>
+              <stop offset="1" stop-color="#9FCBEA" stop-opacity=".05"/>
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="240" x2="1040" y2="240" stroke="rgba(239,234,217,.3)" stroke-width="1"/>
+          <g stroke="var(--cyan-line)" stroke-width="1.1" fill="url(#soilA)">
+            <rect x="70" y="150" width="900" height="30"/>
+            <rect x="70" y="180" width="900" height="30"/>
+            <rect x="70" y="210" width="900" height="30"/>
+          </g>
+          <g font-family="IBM Plex Mono" font-size="12" fill="var(--on-blueprint-dim)">
+            <text x="90" y="169">context</text>
+            <text x="90" y="199">rechten</text>
+            <text x="90" y="229">taxonomie</text>
+          </g>
+          <path d="M470 150 L520 60 L570 150 Z" fill="none" stroke="#fff" stroke-width="1.3"/>
+          <line x1="520" y1="60" x2="520" y2="20" stroke="var(--brass-bright)" stroke-width="1.3"/>
+          <circle cx="520" cy="16" r="4" fill="var(--brass-bright)"/>
+          <g stroke="rgba(239,234,217,.4)" stroke-width="1" stroke-dasharray="2 4">
+            <line x1="70" y1="130" x2="70" y2="240"/>
+            <line x1="970" y1="130" x2="970" y2="240"/>
+          </g>
+          <g font-family="IBM Plex Mono" font-size="11" fill="var(--on-blueprint-dim)" text-anchor="middle">
+            <text x="520" y="255">6 weken fundament, drie lagen dik</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="trustrow">
+    <div class="trustrow-label">Toolonafhankelijk — spelregels voor wat er nu al draait</div>
+    <div class="toolchips">
+      <span class="toolchip">Microsoft Copilot</span>
+      <span class="toolchip">ChatGPT</span>
+      <span class="toolchip">Gemini</span>
+      <span class="toolchip">Claude</span>
+      <span class="toolchip">+ elke tool die volgt</span>
+    </div>
+  </div>
+</section>
+
+<section id="situatie" aria-labelledby="h-sit" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <div>
+      <span class="sheet-id">02 · de situatie</span>
+      <h2 id="h-sit">Weet je wie er deze week klantinformatie in ChatGPT plakte?</h2>
+      <p class="lead" style="margin:1.25rem 0 0;font-size:1.0625rem;color:var(--steel)">Bij de meeste kantoren van jullie omvang is het antwoord nee, en waarschijnlijk best veel. Niet omdat er geen regels zijn, maar omdat de informatie zelf nergens goed staat. Dus pakt iedereen zijn eigen tool erbij.</p>
+      <ul class="moments">
+        <li class="moment"><span class="n">01</span><p>Een collega zoekt zeven minuten naar de laatste versie van een procedure, en gebruikt uiteindelijk de verkeerde.</p></li>
+        <li class="moment"><span class="n">02</span><p>Copilot vat een dossier samen op basis van een map die in 2021 voor het laatst is opgeruimd.</p></li>
+        <li class="moment"><span class="n">03</span><p>Vier mensen hanteren vier versies van dezelfde werkinstructie. Niemand weet welke geldt.</p></li>
+      </ul>
+    </div>
+    <aside>
+      <div class="note">
+        <strong>“We doen al iets met AI”</strong>
+        Goed. Wie bepaalt dan wat er wel en niet in mag, en waar staat dat opgeschreven? Bij vrijwel elk kantoor is het antwoord: nergens.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="grens" aria-labelledby="h-grens" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <div>
+      <span class="sheet-id">03 · de grens</span>
+      <h2 id="h-grens">Wij komen niet aan jullie IT.</h2>
+      <p style="margin:1.25rem 0 1.75rem;max-width:52ch;color:var(--steel)">Het fundament ligt tussen je IT-partner en je AI-tools. Infrastructuur, licenties, beheer en support blijven volledig bij hen. Bij de oplevering zitten ze aan tafel.</p>
+      <div class="split">
+        <div class="split-col do">
+          <div class="col-h do">✓ wat wij doen</div>
+          <ul>
+            <li>Taxonomie en mappenstructuur</li>
+            <li>Rechtenmatrix per rol</li>
+            <li>Context Pack voor AI-tools</li>
+            <li>Spelregels per tool, op papier</li>
+            <li>Uitrol bij het team</li>
+          </ul>
+        </div>
+        <div class="split-col dont">
+          <div class="col-h dont">✕ wat wij niet doen</div>
+          <ul class="dont">
+            <li>Servers, netwerk, back-up</li>
+            <li>Licenties verkopen</li>
+            <li>Helpdesk voor hardware</li>
+            <li>Chatbots en AI-agents bouwen</li>
+            <li>AI-cursussen geven</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <div class="note">
+        <strong>“Onze IT-partner doet dit”</strong>
+        Vraag ze eens wat er nu precies in jullie mappenstructuur staat en of een AI-tool daar iets van kan maken. Meestal is dat niet hun vak, en dat is prima.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="fundament" aria-labelledby="h-fund" style="border-top:1px solid var(--rule)">
+  <span class="sheet-id">04 · het fundament</span>
+  <h2 id="h-fund" style="max-width:20ch">Van losse documenten naar één gelaagde structuur.</h2>
+
+  <div class="diagram">
+    <svg viewBox="0 0 800 300" role="img" aria-labelledby="figt figd">
+      <title id="figt">Van verspreide en dubbele documenten naar drie gestapelde lagen</title>
+      <desc id="figd">Links zweven losse en dubbele documentvlakken door elkaar. Rechts zijn ze samengevoegd tot drie gestapelde platen: taxonomie, rechten en context.</desc>
+      <g opacity=".5" fill="none" stroke="#9FCBEA" stroke-width="1.1">
+        <rect x="40" y="40" width="46" height="58" transform="rotate(-14 63 69)"/>
+        <rect x="50" y="48" width="46" height="58" transform="rotate(-9 73 77)" opacity=".6"/>
+        <rect x="118" y="78" width="46" height="58" transform="rotate(11 141 107)"/>
+        <rect x="60" y="140" width="46" height="58" transform="rotate(6 83 169)"/>
+        <rect x="150" y="182" width="46" height="58" transform="rotate(-8 173 211)"/>
+        <rect x="34" y="222" width="46" height="58" transform="rotate(-19 57 251)"/>
+        <rect x="192" y="34" width="46" height="58" transform="rotate(17 215 63)"/>
+      </g>
+      <text x="40" y="288" font-family="IBM Plex Mono" font-size="12" fill="var(--on-blueprint-dim)">nu — verspreid</text>
+      <path d="M280 150 L345 150" stroke="var(--brass-bright)" stroke-width="1.5"/>
+      <path d="M337 144 L345 150 L337 156" fill="none" stroke="var(--brass-bright)" stroke-width="1.5"/>
+      <g>
+        <rect x="410" y="90" width="330" height="46" rx="2" fill="none" stroke="#fff" stroke-width="1.3"/>
+        <rect x="410" y="150" width="330" height="46" rx="2" fill="none" stroke="#fff" stroke-width="1.3"/>
+        <rect x="410" y="210" width="330" height="46" rx="2" fill="none" stroke="#fff" stroke-width="1.3"/>
+        <text x="428" y="118" font-family="IBM Plex Mono" font-size="14" fill="#fff">taxonomie</text>
+        <text x="428" y="178" font-family="IBM Plex Mono" font-size="14" fill="#fff">rechten</text>
+        <text x="428" y="238" font-family="IBM Plex Mono" font-size="14" fill="#fff">context</text>
+        <line x1="756" y1="90" x2="756" y2="256" stroke="rgba(239,234,217,.4)" stroke-width="1" stroke-dasharray="2 4"/>
+        <text x="766" y="176" font-family="IBM Plex Mono" font-size="11" fill="var(--on-blueprint-dim)">3 lagen</text>
+      </g>
+      <text x="410" y="288" font-family="IBM Plex Mono" font-size="12" fill="var(--on-blueprint-dim)">na zes weken — gestapeld</text>
+    </svg>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <svg class="icon" viewBox="0 0 34 34" fill="none"><rect x="7" y="15" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M11 15v-4a6 6 0 0 1 12 0v4" stroke="currentColor" stroke-width="1.6"/></svg>
+      <h3>Controle</h3>
+      <p class="muted" style="margin:0">Per tool één pagina met de afspraak: welke informatie wel, welke niet, wie beslist. Aantoonbaar richting klant en auditor.</p>
+    </div>
+    <div class="pillar">
+      <svg class="icon" viewBox="0 0 34 34" fill="none"><rect x="6" y="7" width="22" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="6" y="18" width="22" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+      <h3>Context</h3>
+      <p class="muted" style="margin:0">Het Context Pack beschrijft hoe jullie werken, in een vorm die elke AI-tool kan lezen. Nieuwe tool erbij? Je wijst hem er gewoon naartoe.</p>
+    </div>
+    <div class="pillar">
+      <svg class="icon" viewBox="0 0 34 34" fill="none"><path d="M27 17a10 10 0 1 1-3-7.1" stroke="currentColor" stroke-width="1.6"/><path d="M27 6v5h-5" stroke="currentColor" stroke-width="1.6"/></svg>
+      <h3>Continuïteit</h3>
+      <p class="muted" style="margin:0">Zonder onderhoud staat het na een jaar weer scheef. Daarom hoort er driftcontrole bij, niet als extraatje maar als onderdeel.</p>
+    </div>
+  </div>
+</section>
+
+<section id="weken" aria-labelledby="h-wk" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <div>
+      <span class="sheet-id">05 · zes weken</span>
+      <h2 id="h-wk">Vaste datum. Vaste prijs. Nul dagen verstoord werk.</h2>
+      <ol class="weeks">
+        <li><span class="wk">week 1</span><h3>Inventarisatie</h3><p>Tools, bestanden, rollen. Wij graven, jullie werken door.</p></li>
+        <li><span class="wk">week 2</span><h3>Taxonomie</h3><p>Eén structuur, gebouwd op jullie vaktaal, niet op een sjabloon.</p></li>
+        <li><span class="wk">week 3</span><h3>Rechtenmatrix</h3><p>Wie ziet wat. Vastgelegd, en daarna afgestemd met je IT-partner.</p></li>
+        <li><span class="wk">week 4</span><h3>Context Pack</h3><p>De kennis van het kantoor, leesbaar voor elke AI-tool.</p></li>
+        <li><span class="wk">week 5</span><h3>Spelregels</h3><p>Per tool die nu draait: wat mag erin, wat niet, wie beslist.</p></li>
+        <li><span class="wk">week 6</span><h3>Uitrol en overdracht</h3><p>Teamsessie, geprinte kaart, gezamenlijke overdracht met je IT-partner.</p></li>
+      </ol>
+    </div>
+    <aside>
+      <div class="note">
+        <strong>“Geen tijd”</strong>
+        Jullie mensen zijn bij elkaar twee uur kwijt: één interviewronde en één uitrolsessie. Loopt het uit, dan is dat ons probleem, niet dat van jullie planning.
+      </div>
+      <div class="note">
+        <strong>“Mijn team gaat dwarsliggen”</strong>
+        Er wordt niets van hun bureau afgepakt tijdens het werk. De omzetting gebeurt buiten hun werkdag om, en op dag één van de uitrol ligt er een kaart op elk bureau met waar wat staat.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="krijgt" aria-labelledby="h-kr" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <div>
+      <span class="sheet-id">06 · wat je krijgt</span>
+      <h2 id="h-kr">Zes dingen die je daarna in handen hebt.</h2>
+      <ul class="deliv">
+        <li><span class="d">document</span><span>Taxonomie- en mapstructuurplan, met migratievolgorde</span></li>
+        <li><span class="d">document</span><span>Rechtenmatrix per rol, afgestemd met je IT-partner</span></li>
+        <li><span class="d">pakket</span><span>Context Pack — tien bestanden die je aan elke AI-tool voert</span></li>
+        <li><span class="d">document</span><span>Spelregels per AI-tool die nu binnen het kantoor draait</span></li>
+        <li><span class="d">sessie</span><span>Uitrolsessie voor het hele team</span></li>
+        <li><span class="d">kaart</span><span>Geprinte “waar staat wat”-kaart, één A4 per bureau</span></li>
+      </ul>
+    </div>
+    <aside>
+      <div class="note">
+        <strong>Inbegrepen, zonder meerprijs</strong>
+        Twaalf maanden tool-tegoed: stuur ons elke AI-tool die je overweegt, je krijgt een go/no-go plus de spelregels ervoor terug.<br><br>
+        Gezamenlijke technische overdracht met je IT-partner.<br><br>
+        Driftcontrole na 90 dagen: wij komen terug en laten zien wat er is weggezakt.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="kosten" aria-labelledby="h-ko" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <div>
+      <span class="sheet-id">07 · kostenmeter</span>
+      <h2 id="h-ko">Wat kost zoeken jullie nu per jaar?</h2>
+      <p style="margin:1.25rem 0 1.75rem;max-width:48ch;color:var(--steel)">Zet je eigen cijfers erin. Dit is een rekensom op jouw invoer, geen belofte van ons.</p>
+
+      <div class="sheet meter">
+        <div class="ctrl">
+          <label for="m1">Aantal medewerkers <output id="o1">25</output></label>
+          <input type="range" id="m1" min="10" max="60" step="1" value="25">
+        </div>
+        <div class="ctrl">
+          <label for="m2">Gemiddeld uurtarief <output id="o2">€85</output></label>
+          <input type="range" id="m2" min="40" max="150" step="5" value="85">
+        </div>
+        <div class="ctrl">
+          <label for="m3">Zoeken naar informatie, per dag <output id="o3">20 min</output></label>
+          <input type="range" id="m3" min="5" max="60" step="5" value="20">
+        </div>
+        <div class="result">
+          <span class="kicker">Kosten per jaar, op jouw invoer</span>
+          <output class="big" id="total" aria-live="polite">€155.833</output>
+          <div class="bars">
+            <div class="bar-row"><span>zoektijd/jaar</span><span class="bar bar-a" id="barA" style="width:100%"></span></div>
+            <div class="bar-row"><span>fundament</span><span class="bar bar-b" id="barB" style="width:6%"></span><span class="muted">€8.500</span></div>
+          </div>
+          <p class="formula" id="formula">medewerkers x minuten/dag x 220 werkdagen / 60 x uurtarief</p>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <div class="note">
+        <strong>Aannames <span class="mono" style="font-weight:400;text-transform:none;letter-spacing:0">(bewerkbaar)</span></strong>
+        220 werkdagen per jaar. Zoektijd is een schatting, geen meting, in de scan meten we het echt met een turfkaart en een getimede zoektest.<br><br>
+        Wij claimen niet dat dit bedrag verdwijnt. Een deel ervan verdwijnt.
+      </div>
+      <div class="note">
+        <strong>“Te duur”</strong>
+        Vergeleken waarmee? Het traject kost eenmalig ongeveer wat één medewerker in drie weken kost.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="prijs" aria-labelledby="h-pr" style="border-top:1px solid var(--rule)">
+  <span class="sheet-id">08 · prijs</span>
+  <h2 id="h-pr" style="max-width:22ch">Begin bij de scan. Die verrekenen we volledig.</h2>
+  <div class="tiers">
+    <div class="tier primary">
+      <span class="badge">Begin hier</span>
+      <div class="name">Fundament Scan</div>
+      <div class="price">€1.950</div>
+      <div class="sub">Twee weken, vaste prijs</div>
+      <ul>
+        <li>Interviews en toolinventarisatie</li>
+        <li>Bestandsaudit met echte cijfers</li>
+        <li>Risicobevindingen</li>
+        <li>90-dagenplan dat je ook zonder ons kunt uitvoeren</li>
+      </ul>
+      <a class="btn btn-brass" href="#slot">Plan de scan in</a>
+      <p style="font-size:.875rem;color:var(--steel);margin:14px 0 0">Ga je door met het traject, dan gaat dit bedrag er volledig vanaf.</p>
+    </div>
+    <div class="tier">
+      <div class="name">Het AI-Fundament</div>
+      <div class="price">€8.500</div>
+      <div class="sub">Zes weken · bandbreedte €6.500–12.500 naar omvang</div>
+      <ul>
+        <li>Alles uit sectie 06</li>
+        <li>Uitrolsessie en geprinte kaart</li>
+        <li>12 maanden tool-tegoed</li>
+        <li>Overdracht met je IT-partner</li>
+        <li>Driftcontrole na 90 dagen</li>
+      </ul>
+      <a class="btn btn-ink" href="#slot">Vraag de scope-opzet aan</a>
+    </div>
+    <div class="tier">
+      <div class="name">Fundament Abonnement</div>
+      <div class="price">staffel</div>
+      <div class="sub">Drie tarieven naar kantooromvang · 12 maanden</div>
+      <ul>
+        <li>Driftcontrole per kwartaal</li>
+        <li>Contextupdates</li>
+        <li>Assessment van nieuwe tools</li>
+        <li>Helpdesk voor medewerkers</li>
+      </ul>
+      <div class="ph">PLACEHOLDER: hier komen de drie staffelbedragen zodra je ze vastzet.</div>
+    </div>
+  </div>
+  <p class="tier4-note">Werkflows en agents bovenop een levend fundament kunnen ook, vanaf €5.000. Maar niet eerder dan dat het fundament er ligt, en niet als het niet nodig is.</p>
+</section>
+
+<section id="garantie" aria-labelledby="h-ga" style="border-top:1px solid var(--rule)">
+  <div class="guarantee">
+    <span class="sheet-id">09 · garantie</span>
+    <h2 id="h-ga">Vaste datum, vaste prijs.</h2>
+    <p class="lead" style="margin-top:1.25rem">Staat het fundament door onze schuld niet live op de afgesproken datum, dan vervalt de laatste termijn.</p>
+    <p class="lead">En na de scan: vind je het traject het niet waard, dan stop je. Je hebt de scan betaald en je houdt het rapport.</p>
+    <span class="cap">Twee trajecten per maand. Dat is geen verkooptruc maar een agenda.</span>
+  </div>
+</section>
+
+<section id="bewijs" aria-labelledby="h-be" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <div>
+      <span class="sheet-id">10 · bewijs</span>
+      <h2 id="h-be">We hebben het eerst op onszelf gedaan.</h2>
+      <p style="margin:1.25rem 0 0;max-width:50ch;color:var(--steel)">Voordat we dit aanboden, hebben we de methode op ons eigen bureau uitgevoerd: dezelfde inventarisatie, dezelfde taxonomie, hetzelfde Context Pack. Wat daaruit kwam staat hiernaast, met de kanttekening dat één bureau geen bewijs is, maar wel een eerlijk beginpunt.</p>
+      <div class="ph" style="margin-top:1.75rem">PLACEHOLDER: klantcase. Blijft leeg tot er een echte klant is met een echt cijfer. Geen logo's, geen verzonnen quotes.</div>
+    </div>
+    <aside>
+      <div class="note">
+        <strong>Eigen bureau <span class="mono" style="font-weight:400;text-transform:none;letter-spacing:0">(dogfood)</span></strong>
+        <div class="ph" style="margin-top:10px">PLACEHOLDER: drie cijfers uit je eigen traject, gevonden uren, verkeerd opgeslagen bestanden, tools zonder spelregels.</div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="scorecard" aria-labelledby="h-sc" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <div>
+      <span class="sheet-id">11 · scorecard</span>
+      <h2 id="h-sc">Nog niet toe aan een gesprek? Doe de scorecard.</h2>
+      <p style="margin:1.25rem 0 1.75rem;max-width:46ch;color:var(--steel)">Vier vragen in dit prototype, twaalf in de echte versie. Je krijgt direct een score. Je e-mail vragen we pas na de uitslag, en alleen voor de pdf.</p>
+      <div class="card" id="sc">
+        <div class="progress" id="scProg">Vraag 1 van 4</div>
+        <div class="q" id="scQ">Weet je waar de actuele versie van een werkinstructie staat?</div>
+        <div class="opts" id="scOpts"></div>
+      </div>
+    </div>
+    <aside>
+      <div class="note">
+        <strong>Wat we met je gegevens doen</strong>
+        We sturen je de pdf en hooguit één keer een vervolgmail. Geen nieuwsbrief, geen doorverkoop, uitschrijven met één klik. Verwijderd op verzoek.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="h-fa" style="border-top:1px solid var(--rule)">
+  <span class="sheet-id">12 · vragen</span>
+  <h2 id="h-fa">Wat directeuren meestal nog vragen.</h2>
+  <div style="max-width:62ch;margin-top:2rem">
+    <details><summary>Moeten al onze bestanden verhuizen?</summary><p>Nee. We maken een structuur en een migratievolgorde. Wat verhuist en wanneer, bepaal jij samen met je IT-partner, vaak in fasen, vaak buiten werktijd.</p></details>
+    <details><summary>Werkt dit ook als we geen Copilot hebben?</summary><p>Ja. Het fundament is toolonafhankelijk. Copilot is alleen de tool waar de meeste kantoren nu tegenaan lopen.</p></details>
+    <details><summary>Is dit juridisch advies over de AVG?</summary><p>Nee. Dit is organisatorisch advies. We leggen vast wat waar mag en wie beslist; de juridische toets blijft bij jullie eigen adviseur.</p></details>
+    <details><summary>Wat als het over een jaar weer scheef staat?</summary><p>Dat gebeurt zonder onderhoud gegarandeerd. Daarom zit de driftcontrole na 90 dagen in het traject, en daarom bestaat het abonnement.</p></details>
+    <details><summary>Kunnen we alleen de scan doen?</summary><p>Ja. Het rapport is zo geschreven dat je het zelf kunt uitvoeren. Dat is bewust, anders is het geen eerlijk rapport.</p></details>
+  </div>
+</section>
+
+<section class="slot" id="slot" aria-labelledby="h-sl" style="border-top:1px solid var(--rule)">
+  <div class="grid">
+    <div>
+      <span class="sheet-id">13 · plan de scan</span>
+      <h2 id="h-sl" style="max-width:20ch">Twee weken, €1.950, en je weet waar je staat.</h2>
+      <form id="f" class="sheet" style="margin-top:2rem;max-width:420px;padding:26px" novalidate>
+        <div class="field"><label for="n">Naam</label><input id="n" name="n" autocomplete="name"></div>
+        <div class="field"><label for="e">E-mail</label><input id="e" name="e" type="email" autocomplete="email" placeholder="naam@kantoor.nl"></div>
+        <div class="field"><label for="k">Kantoor</label><input id="k" name="k" autocomplete="organization"></div>
+        <div class="field"><label for="a">Aantal medewerkers</label><input id="a" name="a" inputmode="numeric"></div>
+        <input class="hp" tabindex="-1" autocomplete="off" id="hp" aria-hidden="true">
+        <p class="err" id="fErr" hidden></p>
+        <button class="btn btn-brass" type="submit" style="width:100%;margin-top:8px">Plan de scan in</button>
+        <p style="font-size:.875rem;color:var(--steel);margin-top:14px">We nemen binnen één werkdag contact op. Geen nieuwsbrief, geen doorverkoop.</p>
+      </form>
+    </div>
+    <aside>
+      <div class="note">
+        <strong>Liever eerst bellen?</strong>
+        Dat kan ook. Twintig minuten, geen presentatie, dan hoor je meteen of dit bij jullie speelt of niet.
+        <div class="ph" style="margin-top:10px">PLACEHOLDER: boekingslink</div>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  Het AI-Fundament · <span class="ph" style="display:inline;border:0;padding:0">PLACEHOLDER: KvK, adres, algemene voorwaarden, privacyverklaring</span>
+</footer>
+
+<div class="sticky">
+  <div class="p">Scan<br><b>€1.950</b></div>
+  <a class="btn btn-brass" href="#slot">Plan de scan in</a>
+</div>
+
+<script>
+(function(){
+  var m1=document.getElementById('m1'),m2=document.getElementById('m2'),m3=document.getElementById('m3');
+  var o1=document.getElementById('o1'),o2=document.getElementById('o2'),o3=document.getElementById('o3');
+  var tot=document.getElementById('total'),barB=document.getElementById('barB'),fm=document.getElementById('formula');
+  var eur=new Intl.NumberFormat('nl-NL',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+  function calc(){
+    var n=+m1.value,r=+m2.value,min=+m3.value;
+    var hours=n*min*220/60, cost=Math.round(hours*r);
+    o1.textContent=n; o2.textContent=eur.format(r); o3.textContent=min+' min';
+    tot.textContent=eur.format(cost);
+    barB.style.width=Math.max(3,Math.min(100,8500/cost*100)).toFixed(1)+'%';
+    fm.textContent=n+' x '+min+' min x 220 dagen / 60 = '+Math.round(hours).toLocaleString('nl-NL')+' uur x '+eur.format(r)+' = '+eur.format(cost);
+  }
+  [m1,m2,m3].forEach(function(el){el.addEventListener('input',calc)});
+  calc();
+
+  var qs=[
+   {q:'Weet je waar de actuele versie van een werkinstructie staat?',a:[['Ja, één plek, iedereen weet het',3],['Meestal wel, met wat zoeken',2],['Nee, er zijn meerdere versies',0]]},
+   {q:'Zijn er afspraken over wat er wel en niet in een AI-tool mag?',a:[['Ja, vastgelegd en bekend',3],['Mondeling, niet op papier',1],['Nee',0]]},
+   {q:'Weet je welke tools binnen het kantoor AI-functies hebben aanstaan?',a:[['Ja, volledig in beeld',3],['Grofweg',1],['Nee',0]]},
+   {q:'Is vastgelegd wie welke mappen mag zien?',a:[['Ja, per rol vastgelegd',3],['Deels, historisch gegroeid',1],['Nee',0]]}
+  ];
+  var i=0,score=0;
+  var box=document.getElementById('sc'),qEl=document.getElementById('scQ'),
+      oEl=document.getElementById('scOpts'),pEl=document.getElementById('scProg');
+  function render(){
+    pEl.textContent='Vraag '+(i+1)+' van '+qs.length;
+    qEl.textContent=qs[i].q; oEl.innerHTML='';
+    qs[i].a.forEach(function(pair){
+      var b=document.createElement('button');
+      b.type='button'; b.className='opt'; b.textContent=pair[0];
+      b.addEventListener('click',function(){score+=pair[1];i++;i<qs.length?render():result()});
+      oEl.appendChild(b);
+    });
+  }
+  function result(){
+    var max=qs.length*3,pct=Math.round(score/max*100);
+    var verdict = pct<40 ? ['Je fundament ligt er nog niet','Elke AI-tool die je nu aanzet, gokt. Begin bij de scan.']
+              : pct<75 ? ['Je bent er half','De basis staat, maar de afspraken en de rechten lopen achter. Dat is precies waar het misgaat zodra een klant ernaar vraagt.']
+                       : ['Je hebt het beter op orde dan de meesten','Op dit niveau is een volledig traject waarschijnlijk overkill. De scan alleen is dan zinniger, of niets doen.'];
+    box.innerHTML =
+      '<div class="progress">Uitslag</div>'+
+      '<div class="scorebar"><span id="sb"></span></div>'+
+      '<div class="q" style="margin-bottom:6px">'+verdict[0]+'</div>'+
+      '<p style="color:var(--steel);font-size:1rem" aria-live="polite">Score '+score+' van '+max+'. '+verdict[1]+'</p>'+
+      '<div class="field" style="margin-top:18px"><label for="se">E-mail voor de pdf met je uitslag</label><input id="se" type="email" placeholder="naam@kantoor.nl"></div>'+
+      '<p class="err" id="seErr" hidden></p>'+
+      '<button class="btn btn-brass" id="seBtn" style="width:100%">Stuur de pdf</button>';
+    requestAnimationFrame(function(){document.getElementById('sb').style.width=pct+'%'});
+    var se=document.getElementById('se'),err=document.getElementById('seErr');
+    se.addEventListener('input',function(){err.hidden=true});
+    document.getElementById('seBtn').addEventListener('click',function(){
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(se.value)){err.textContent='Vul een geldig e-mailadres in.';err.hidden=false;se.focus();return}
+      box.innerHTML='<div class="q">Onderweg.</div><p style="color:var(--steel)">De pdf staat binnen een minuut in je inbox. <span class="ph" style="display:inline;border:0;padding:0">PLACEHOLDER: koppeling naar e-mailsysteem</span></p>';
+    });
+  }
+  render();
+
+  var f=document.getElementById('f'),fe=document.getElementById('fErr');
+  f.addEventListener('input',function(){fe.hidden=true});
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    if(document.getElementById('hp').value) return;
+    var n=document.getElementById('n'),e=document.getElementById('e');
+    if(!n.value.trim()){fe.textContent='Vul je naam in.';fe.hidden=false;n.focus();return}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e.value)){fe.textContent='Vul een geldig e-mailadres in.';fe.hidden=false;e.focus();return}
+    f.innerHTML='<div class="q">Ontvangen.</div><p style="color:var(--steel)">Je hoort binnen één werkdag van ons. <span class="ph" style="display:inline;border:0;padding:0">PLACEHOLDER: koppeling naar inbox/CRM</span></p>';
+  });
+})();
+</script>
+</body>
+</html>
