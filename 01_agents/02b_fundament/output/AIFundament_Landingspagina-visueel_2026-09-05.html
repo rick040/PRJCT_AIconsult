@@ -59,7 +59,14 @@ html{-webkit-text-size-adjust:100%}
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:"Public Sans",system-ui,sans-serif;font-size:var(--fs-body);line-height:1.62;
+  position:relative;
 }
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.05;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) body::before{opacity:.08;mix-blend-mode:overlay}}
+:root[data-theme="dark"] body::before{opacity:.08;mix-blend-mode:overlay}
 h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.015em;
   margin:0;text-wrap:balance}
 h1{font-size:var(--fs-h1);font-weight:600;letter-spacing:-.02em}
@@ -70,9 +77,14 @@ a{color:inherit}
 .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 section{padding:clamp(3.5rem,7vw,6.5rem) 0}
-.sheet-id{font-family:"IBM Plex Mono";font-size:.75rem;letter-spacing:.1em;color:var(--steel);
-  display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;text-transform:uppercase}
-.sheet-id::before{content:"";width:22px;height:1px;background:var(--brass)}
+
+/* --- blad: title-block stamp, in the style of a drawing sheet's corner stamp --- */
+.blad{display:inline-grid;grid-template-columns:auto auto;gap:1px;border:1px solid var(--rule);
+  font-family:"IBM Plex Mono";font-size:.6875rem;letter-spacing:.04em;margin-bottom:1.75rem;background:var(--rule)}
+.blad div{background:var(--paper);padding:5px 10px;color:var(--steel)}
+.blad .k{color:var(--steel)}
+.blad .v{color:var(--ink);font-weight:500}
+.blad .v.brass{color:var(--brass)}
 .lead{font-size:var(--fs-lead);line-height:1.45;max-width:38ch}
 .muted{color:var(--steel)}
 .grid{display:grid;gap:2.25rem}
@@ -137,13 +149,13 @@ section{padding:clamp(3.5rem,7vw,6.5rem) 0}
 .trustrow{padding:22px 0 26px;border-top:1px solid var(--rule)}
 .trustrow-label{font-family:"IBM Plex Mono";font-size:.75rem;letter-spacing:.08em;color:var(--steel);
   text-transform:uppercase;margin-bottom:14px}
-.toolchips{display:flex;flex-wrap:wrap;gap:10px}
-.toolchip{font-family:"IBM Plex Mono";font-size:.8125rem;border:1px solid var(--rule);border-radius:20px;
-  padding:6px 14px;color:var(--steel)}
+.toolchips{font-family:"IBM Plex Mono";font-size:.8125rem;letter-spacing:.03em;color:var(--steel);
+  display:flex;flex-wrap:wrap;column-gap:.6em;row-gap:4px}
+.toolchips span:not(:last-child)::after{content:"·";margin-left:.6em;color:var(--brass)}
 
 /* --- moments (situatie) --- */
 .moments{list-style:none;padding:0;margin:1.75rem 0 0;display:grid;gap:10px}
-.moment{display:flex;gap:14px;padding:16px 18px;border:1px solid var(--rule);border-radius:6px;
+.moment{display:flex;gap:14px;padding:16px 18px;border:1px solid var(--rule);border-radius:2px;
   background:var(--paper-2);align-items:flex-start}
 .moment .n{font-family:"IBM Plex Mono";font-size:.8125rem;color:var(--brass);flex:none;padding-top:2px}
 .moment p{margin:0}
@@ -152,30 +164,38 @@ section{padding:clamp(3.5rem,7vw,6.5rem) 0}
   text-transform:uppercase;color:var(--ink);display:block;margin-bottom:8px}
 .note + .note{margin-top:1.25rem}
 
-/* --- grens split --- */
-.split{display:grid;gap:14px}
-@media(min-width:640px){.split{grid-template-columns:1fr 1fr;gap:18px}}
-.split-col{border-radius:8px;padding:22px}
-.split-col.do{border:1px solid var(--rule);background:var(--paper-2)}
-.split-col.dont{border:1px dashed var(--rule);background:transparent}
-.col-h{font-family:"IBM Plex Mono";font-weight:600;font-size:.75rem;letter-spacing:.1em;
-  text-transform:uppercase;padding-bottom:10px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.col-h.do{color:var(--brass)}
-.col-h.dont{color:var(--steel)}
-.split ul{list-style:none;padding:0;margin:0}
-.split li{padding:9px 0;font-size:1rem;line-height:1.4;border-bottom:1px solid var(--rule)}
-.split li:last-child{border-bottom:0}
-.dont li{color:var(--steel);text-decoration:line-through;text-decoration-color:var(--rule)}
+/* --- interstitial: one oversized typographic beat, breaks the section rhythm --- */
+.statement{padding:clamp(2.5rem,6vw,4rem) 0}
+.statement p{font-family:"Fraunces";font-style:italic;font-weight:500;
+  font-size:clamp(1.625rem,1.2rem + 2.4vw,2.75rem);line-height:1.28;letter-spacing:-.01em;
+  max-width:22ch;margin:0 0 0 auto;text-align:right;color:var(--ink)}
+.statement .rule{width:64px;height:2px;background:var(--brass);margin:0 0 1.75rem auto}
+
+/* --- grens: scope ledger (bill-of-materials style) --- */
+.bom{width:100%;border-collapse:collapse;margin-top:1.75rem;font-size:.9375rem}
+.bom thead th{font-family:"IBM Plex Mono";font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--steel);text-align:left;padding:0 0 10px;border-bottom:1px solid var(--ink);font-weight:500}
+.bom thead th:last-child{text-align:right}
+.bom td{padding:11px 0;border-bottom:1px solid var(--rule);vertical-align:baseline}
+.bom td:last-child{text-align:right;white-space:nowrap;padding-left:16px}
+.bom tr.out td:first-child{color:var(--steel)}
+.stat{font-family:"IBM Plex Mono";font-size:.75rem;letter-spacing:.04em}
+.stat.in{color:var(--brass)}
+.stat.out{color:var(--steel)}
 
 /* --- fundament diagram --- */
 .diagram{border-radius:10px;overflow:hidden;background:linear-gradient(160deg,var(--blueprint),var(--blueprint-3));
-  padding:clamp(1.5rem,4vw,2.5rem);margin:2.25rem 0 2.75rem;position:relative}
+  padding:clamp(1.5rem,4vw,2.5rem);margin:2.25rem 0 0;position:relative}
 .diagram svg{display:block;width:100%;height:auto;position:relative}
-.pillars{display:grid;gap:1.5rem;margin-top:2rem}
-@media(min-width:760px){.pillars{grid-template-columns:repeat(3,1fr);gap:1.75rem}}
-.pillar{padding:22px;border:1px solid var(--rule);border-radius:8px;background:var(--paper-2)}
-.pillar .icon{width:34px;height:34px;margin-bottom:14px;color:var(--brass)}
-.pillar h3{margin-bottom:.5rem;font-size:1.1875rem}
+.legend{list-style:none;padding:0;margin:0}
+@media(min-width:760px){.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:0}}
+.legend li{display:flex;gap:14px;padding:1.5rem 0;border-bottom:1px solid var(--rule)}
+@media(min-width:760px){.legend li{border-bottom:0;border-top:1px solid var(--rule);padding:1.5rem 1.75rem 0 0}
+  .legend li:first-child{padding-left:0}}
+.legend .num{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--brass);color:var(--brass);
+  font-family:"IBM Plex Mono";font-size:.8125rem;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.legend h3{margin-bottom:.4rem;font-size:1.0625rem}
+.legend p{margin:0;color:var(--steel);font-size:.9375rem}
 
 /* --- weken ruler --- */
 .weeks{list-style:none;padding:0 0 0 26px;margin:2rem 0 0;position:relative;border-left:2px solid var(--rule)}
@@ -220,29 +240,30 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border:3px solid var(
 .formula{font-family:"IBM Plex Mono";font-size:.75rem;color:var(--steel);
   line-height:1.6;margin-top:16px;word-break:break-word;padding-top:14px;border-top:1px dashed var(--rule)}
 
-/* --- pricing --- */
-.tiers{display:grid;gap:18px;margin-top:2.5rem}
-@media(min-width:880px){.tiers{grid-template-columns:repeat(3,1fr)}}
-.tier{border:1px solid var(--rule);border-radius:10px;padding:26px;background:var(--paper-2);display:flex;flex-direction:column}
-.tier.primary{border:1px solid var(--brass);background:var(--paper);box-shadow:0 8px 24px -12px rgba(200,134,47,.35)}
-.tier .name{font-family:"Fraunces";font-weight:600;font-size:1.1875rem;margin-bottom:6px}
-.tier .price{font-family:"IBM Plex Mono";font-weight:600;font-size:1.875rem;letter-spacing:-.01em;
-  font-variant-numeric:tabular-nums;margin:10px 0 2px;color:var(--ink)}
-.tier .sub{font-size:.9375rem;color:var(--steel);margin-bottom:16px}
-.tier ul{list-style:none;padding:0;margin:0 0 20px;font-size:.9375rem;flex:1}
-.tier li{padding:7px 0;border-bottom:1px solid var(--rule);line-height:1.35}
-.tier li:last-child{border-bottom:0}
-.tier .btn{width:100%}
-.badge{display:inline-flex;align-items:center;gap:6px;background:var(--brass);color:#1B1305;font-family:"IBM Plex Mono";
-  font-size:.6875rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:12px}
+/* --- pricing: spec sheet --- */
+.spec-wrap{overflow-x:auto;margin-top:2.5rem;border:1px solid var(--rule)}
+.spec{width:100%;border-collapse:collapse;min-width:640px;font-size:.9375rem}
+.spec th,.spec td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+.spec thead th{background:var(--paper-2);vertical-align:bottom}
+.spec .rowlabel{font-family:"IBM Plex Mono";font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--steel);white-space:nowrap;width:1%}
+.spec .name{font-family:"Fraunces";font-weight:600;font-size:1.125rem}
+.spec .price{font-family:"IBM Plex Mono";font-weight:600;font-size:1.25rem;color:var(--ink);
+  font-variant-numeric:tabular-nums;display:block;margin-top:4px}
+.spec .badge{display:inline-flex;align-items:center;background:var(--brass);color:#1B1305;font-family:"IBM Plex Mono";
+  font-size:.625rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-bottom:8px}
+.spec col.primary,.spec th.primary,.spec td.primary{background:rgba(200,134,47,.06)}
+.spec th.primary{border-bottom:2px solid var(--brass)}
+.spec .yes{color:var(--brass)}
+.spec .no{color:var(--rule)}
+.spec tfoot td{border-bottom:0;padding-top:18px}
+.spec .btn{min-height:44px;font-size:.8125rem;padding:0 18px}
 .tier4-note{margin-top:22px;font-size:.9375rem;color:var(--steel);padding-top:16px;border-top:1px solid var(--rule)}
 
 /* --- guarantee --- */
 .guarantee{border-radius:10px;padding:clamp(2rem,5vw,3.25rem);position:relative;overflow:hidden;
   background:radial-gradient(ellipse 700px 400px at 85% 0%, rgba(159,203,234,.12), transparent 60%),
     linear-gradient(160deg,var(--blueprint),var(--blueprint-3));color:var(--on-blueprint)}
-.guarantee .sheet-id{color:var(--on-blueprint-dim)}
-.guarantee .sheet-id::before{background:var(--brass-bright)}
 .guarantee h2{color:#fff;max-width:16ch}
 .guarantee .lead{color:var(--on-blueprint-dim);max-width:48ch}
 .cap{font-family:"IBM Plex Mono";font-size:.875rem;color:var(--brass-bright);margin-top:26px;display:block}
@@ -274,11 +295,13 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border:3px solid var(
 details{border-bottom:1px solid var(--rule);padding:1.1rem 0}
 details:first-of-type{border-top:1px solid var(--rule)}
 summary{font-family:"Fraunces";font-weight:600;font-size:1.0625rem;cursor:pointer;list-style:none;
-  display:flex;justify-content:space-between;gap:16px;line-height:1.3}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--brass);font-weight:400;font-size:1.5rem;line-height:1;font-family:"IBM Plex Mono"}
-details[open] summary::after{content:"\2013"}
-details p{margin:14px 0 0;color:var(--steel);font-size:1rem;max-width:62ch}
+  display:flex;align-items:baseline;gap:14px;line-height:1.3}
+summary .qtag{font-family:"IBM Plex Mono";font-weight:500;font-size:.75rem;color:var(--brass);flex:none}
+summary .qtxt{flex:1}
+summary::after{content:"[+]";color:var(--steel);font-weight:400;font-size:.8125rem;line-height:1;
+  font-family:"IBM Plex Mono";flex:none}
+details[open] summary::after{content:"[\2013]"}
+details p{margin:14px 0 0 40px;color:var(--steel);font-size:1rem;max-width:62ch}
 
 /* --- footer / sticky --- */
 .slot{padding-bottom:8rem}
@@ -324,36 +347,43 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
         <a class="btn btn-brass" href="#prijs">Plan de scan in →</a>
         <a class="btn btn-line" href="#scorecard">Doe eerst de scorecard</a>
       </div>
-      <p class="undercta">SCAN — 2 WEKEN — €1.950 VAST — VOLLEDIG VERREKEND BIJ VERVOLG</p>
+      <p class="undercta">SCAN · 2 WEKEN · €1.950 VAST · VOLLEDIG VERREKEND BIJ VERVOLG</p>
 
       <div class="hero-fig" aria-hidden="true">
-        <svg viewBox="0 0 1040 260" role="img" aria-label="Doorsnede van drie gestapelde funderingslagen: taxonomie, rechten en context, oplopend naar een gebouw">
+        <svg viewBox="0 0 1040 300" role="img" aria-label="Doorsnede van drie gestapelde funderingslagen: taxonomie, rechten en context, met een gebouw erop en een maatvoering van zes weken">
           <defs>
             <linearGradient id="soilA" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stop-color="#9FCBEA" stop-opacity=".22"/>
               <stop offset="1" stop-color="#9FCBEA" stop-opacity=".05"/>
             </linearGradient>
+            <pattern id="hatch" width="9" height="9" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="9" stroke="var(--cyan-line)" stroke-width="1"/>
+            </pattern>
+            <marker id="arw" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 Z" fill="var(--on-blueprint-dim)"/>
+            </marker>
           </defs>
-          <line x1="0" y1="240" x2="1040" y2="240" stroke="rgba(239,234,217,.3)" stroke-width="1"/>
-          <g stroke="var(--cyan-line)" stroke-width="1.1" fill="url(#soilA)">
-            <rect x="70" y="150" width="900" height="30"/>
-            <rect x="70" y="180" width="900" height="30"/>
-            <rect x="70" y="210" width="900" height="30"/>
+          <g stroke="var(--cyan-line)" stroke-width="1.1">
+            <rect x="70" y="150" width="900" height="30" fill="url(#soilA)"/>
+            <rect x="70" y="180" width="900" height="30" fill="url(#soilA)"/>
+            <rect x="70" y="210" width="900" height="30" fill="url(#hatch)"/>
           </g>
           <g font-family="IBM Plex Mono" font-size="12" fill="var(--on-blueprint-dim)">
             <text x="90" y="169">context</text>
             <text x="90" y="199">rechten</text>
-            <text x="90" y="229">taxonomie</text>
+            <text x="90" y="229" fill="var(--on-blueprint)">taxonomie</text>
           </g>
           <path d="M470 150 L520 60 L570 150 Z" fill="none" stroke="#fff" stroke-width="1.3"/>
           <line x1="520" y1="60" x2="520" y2="20" stroke="var(--brass-bright)" stroke-width="1.3"/>
           <circle cx="520" cy="16" r="4" fill="var(--brass-bright)"/>
           <g stroke="rgba(239,234,217,.4)" stroke-width="1" stroke-dasharray="2 4">
-            <line x1="70" y1="130" x2="70" y2="240"/>
-            <line x1="970" y1="130" x2="970" y2="240"/>
+            <line x1="70" y1="130" x2="70" y2="260"/>
+            <line x1="970" y1="130" x2="970" y2="260"/>
           </g>
+          <line x1="70" y1="256" x2="970" y2="256" stroke="var(--on-blueprint-dim)" stroke-width="1"
+                marker-start="url(#arw)" marker-end="url(#arw)"/>
           <g font-family="IBM Plex Mono" font-size="11" fill="var(--on-blueprint-dim)" text-anchor="middle">
-            <text x="520" y="255">6 weken fundament, drie lagen dik</text>
+            <text x="520" y="284">6 weken fundament, drie lagen dik</text>
           </g>
         </svg>
       </div>
@@ -361,7 +391,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
   </div>
 
   <div class="trustrow">
-    <div class="trustrow-label">Toolonafhankelijk — spelregels voor wat er nu al draait</div>
+    <div class="trustrow-label">Toolonafhankelijk: spelregels voor wat er nu al draait</div>
     <div class="toolchips">
       <span class="toolchip">Microsoft Copilot</span>
       <span class="toolchip">ChatGPT</span>
@@ -375,7 +405,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
 <section id="situatie" aria-labelledby="h-sit" style="border-top:1px solid var(--rule)">
   <div class="grid">
     <div>
-      <span class="sheet-id">02 · de situatie</span>
+      <div class="blad"><div class="k">blad</div><div class="v brass">02/13</div><div class="k">onderdeel</div><div class="v">de situatie</div></div>
       <h2 id="h-sit">Weet je wie er deze week klantinformatie in ChatGPT plakte?</h2>
       <p class="lead" style="margin:1.25rem 0 0;font-size:1.0625rem;color:var(--steel)">Bij de meeste kantoren van jullie omvang is het antwoord nee, en waarschijnlijk best veel. Niet omdat er geen regels zijn, maar omdat de informatie zelf nergens goed staat. Dus pakt iedereen zijn eigen tool erbij.</p>
       <ul class="moments">
@@ -393,34 +423,32 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
   </div>
 </section>
 
+<section class="statement" style="border-top:1px solid var(--rule)">
+  <span class="rule"></span>
+  <p>Niet omdat er geen regels zijn. Omdat de informatie zelf nergens goed staat.</p>
+</section>
+
 <section id="grens" aria-labelledby="h-grens" style="border-top:1px solid var(--rule)">
   <div class="grid">
     <div>
-      <span class="sheet-id">03 · de grens</span>
+      <div class="blad"><div class="k">blad</div><div class="v brass">03/13</div><div class="k">onderdeel</div><div class="v">de grens</div></div>
       <h2 id="h-grens">Wij komen niet aan jullie IT.</h2>
       <p style="margin:1.25rem 0 1.75rem;max-width:52ch;color:var(--steel)">Het fundament ligt tussen je IT-partner en je AI-tools. Infrastructuur, licenties, beheer en support blijven volledig bij hen. Bij de oplevering zitten ze aan tafel.</p>
-      <div class="split">
-        <div class="split-col do">
-          <div class="col-h do">✓ wat wij doen</div>
-          <ul>
-            <li>Taxonomie en mappenstructuur</li>
-            <li>Rechtenmatrix per rol</li>
-            <li>Context Pack voor AI-tools</li>
-            <li>Spelregels per tool, op papier</li>
-            <li>Uitrol bij het team</li>
-          </ul>
-        </div>
-        <div class="split-col dont">
-          <div class="col-h dont">✕ wat wij niet doen</div>
-          <ul class="dont">
-            <li>Servers, netwerk, back-up</li>
-            <li>Licenties verkopen</li>
-            <li>Helpdesk voor hardware</li>
-            <li>Chatbots en AI-agents bouwen</li>
-            <li>AI-cursussen geven</li>
-          </ul>
-        </div>
-      </div>
+      <table class="bom">
+        <thead><tr><th>Item</th><th>Scope</th></tr></thead>
+        <tbody>
+          <tr><td>Taxonomie en mappenstructuur</td><td><span class="stat in">● in scope</span></td></tr>
+          <tr><td>Rechtenmatrix per rol</td><td><span class="stat in">● in scope</span></td></tr>
+          <tr><td>Context Pack voor AI-tools</td><td><span class="stat in">● in scope</span></td></tr>
+          <tr><td>Spelregels per tool, op papier</td><td><span class="stat in">● in scope</span></td></tr>
+          <tr><td>Uitrol bij het team</td><td><span class="stat in">● in scope</span></td></tr>
+          <tr class="out"><td>Servers, netwerk, back-up</td><td><span class="stat out">○ buiten scope</span></td></tr>
+          <tr class="out"><td>Licenties verkopen</td><td><span class="stat out">○ buiten scope</span></td></tr>
+          <tr class="out"><td>Helpdesk voor hardware</td><td><span class="stat out">○ buiten scope</span></td></tr>
+          <tr class="out"><td>Chatbots en AI-agents bouwen</td><td><span class="stat out">○ buiten scope</span></td></tr>
+          <tr class="out"><td>AI-cursussen geven</td><td><span class="stat out">○ buiten scope</span></td></tr>
+        </tbody>
+      </table>
     </div>
     <aside>
       <div class="note">
@@ -432,7 +460,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
 </section>
 
 <section id="fundament" aria-labelledby="h-fund" style="border-top:1px solid var(--rule)">
-  <span class="sheet-id">04 · het fundament</span>
+  <div class="blad"><div class="k">blad</div><div class="v brass">04/13</div><div class="k">onderdeel</div><div class="v">het fundament</div></div>
   <h2 id="h-fund" style="max-width:20ch">Van losse documenten naar één gelaagde structuur.</h2>
 
   <div class="diagram">
@@ -448,7 +476,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
         <rect x="34" y="222" width="46" height="58" transform="rotate(-19 57 251)"/>
         <rect x="192" y="34" width="46" height="58" transform="rotate(17 215 63)"/>
       </g>
-      <text x="40" y="288" font-family="IBM Plex Mono" font-size="12" fill="var(--on-blueprint-dim)">nu — verspreid</text>
+      <text x="40" y="288" font-family="IBM Plex Mono" font-size="12" fill="var(--on-blueprint-dim)">nu: verspreid</text>
       <path d="M280 150 L345 150" stroke="var(--brass-bright)" stroke-width="1.5"/>
       <path d="M337 144 L345 150 L337 156" fill="none" stroke="var(--brass-bright)" stroke-width="1.5"/>
       <g>
@@ -461,33 +489,21 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
         <line x1="756" y1="90" x2="756" y2="256" stroke="rgba(239,234,217,.4)" stroke-width="1" stroke-dasharray="2 4"/>
         <text x="766" y="176" font-family="IBM Plex Mono" font-size="11" fill="var(--on-blueprint-dim)">3 lagen</text>
       </g>
-      <text x="410" y="288" font-family="IBM Plex Mono" font-size="12" fill="var(--on-blueprint-dim)">na zes weken — gestapeld</text>
+      <text x="410" y="288" font-family="IBM Plex Mono" font-size="12" fill="var(--on-blueprint-dim)">na zes weken: gestapeld</text>
     </svg>
   </div>
 
-  <div class="pillars">
-    <div class="pillar">
-      <svg class="icon" viewBox="0 0 34 34" fill="none"><rect x="7" y="15" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M11 15v-4a6 6 0 0 1 12 0v4" stroke="currentColor" stroke-width="1.6"/></svg>
-      <h3>Controle</h3>
-      <p class="muted" style="margin:0">Per tool één pagina met de afspraak: welke informatie wel, welke niet, wie beslist. Aantoonbaar richting klant en auditor.</p>
-    </div>
-    <div class="pillar">
-      <svg class="icon" viewBox="0 0 34 34" fill="none"><rect x="6" y="7" width="22" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="6" y="18" width="22" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
-      <h3>Context</h3>
-      <p class="muted" style="margin:0">Het Context Pack beschrijft hoe jullie werken, in een vorm die elke AI-tool kan lezen. Nieuwe tool erbij? Je wijst hem er gewoon naartoe.</p>
-    </div>
-    <div class="pillar">
-      <svg class="icon" viewBox="0 0 34 34" fill="none"><path d="M27 17a10 10 0 1 1-3-7.1" stroke="currentColor" stroke-width="1.6"/><path d="M27 6v5h-5" stroke="currentColor" stroke-width="1.6"/></svg>
-      <h3>Continuïteit</h3>
-      <p class="muted" style="margin:0">Zonder onderhoud staat het na een jaar weer scheef. Daarom hoort er driftcontrole bij, niet als extraatje maar als onderdeel.</p>
-    </div>
-  </div>
+  <ul class="legend">
+    <li><span class="num">1</span><div><h3>Controle</h3><p>Per tool één pagina met de afspraak: welke informatie wel, welke niet, wie beslist. Aantoonbaar richting klant en auditor.</p></div></li>
+    <li><span class="num">2</span><div><h3>Context</h3><p>Het Context Pack beschrijft hoe jullie werken, in een vorm die elke AI-tool kan lezen. Nieuwe tool erbij? Je wijst hem er gewoon naartoe.</p></div></li>
+    <li><span class="num">3</span><div><h3>Continuïteit</h3><p>Zonder onderhoud staat het na een jaar weer scheef. Daarom hoort er driftcontrole bij, niet als extraatje maar als onderdeel.</p></div></li>
+  </ul>
 </section>
 
 <section id="weken" aria-labelledby="h-wk" style="border-top:1px solid var(--rule)">
   <div class="grid">
     <div>
-      <span class="sheet-id">05 · zes weken</span>
+      <div class="blad"><div class="k">blad</div><div class="v brass">05/13</div><div class="k">onderdeel</div><div class="v">zes weken</div></div>
       <h2 id="h-wk">Vaste datum. Vaste prijs. Nul dagen verstoord werk.</h2>
       <ol class="weeks">
         <li><span class="wk">week 1</span><h3>Inventarisatie</h3><p>Tools, bestanden, rollen. Wij graven, jullie werken door.</p></li>
@@ -514,12 +530,12 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
 <section id="krijgt" aria-labelledby="h-kr" style="border-top:1px solid var(--rule)">
   <div class="grid">
     <div>
-      <span class="sheet-id">06 · wat je krijgt</span>
+      <div class="blad"><div class="k">blad</div><div class="v brass">06/13</div><div class="k">onderdeel</div><div class="v">wat je krijgt</div></div>
       <h2 id="h-kr">Zes dingen die je daarna in handen hebt.</h2>
       <ul class="deliv">
         <li><span class="d">document</span><span>Taxonomie- en mapstructuurplan, met migratievolgorde</span></li>
         <li><span class="d">document</span><span>Rechtenmatrix per rol, afgestemd met je IT-partner</span></li>
-        <li><span class="d">pakket</span><span>Context Pack — tien bestanden die je aan elke AI-tool voert</span></li>
+        <li><span class="d">pakket</span><span>Context Pack: tien bestanden die je aan elke AI-tool voert</span></li>
         <li><span class="d">document</span><span>Spelregels per AI-tool die nu binnen het kantoor draait</span></li>
         <li><span class="d">sessie</span><span>Uitrolsessie voor het hele team</span></li>
         <li><span class="d">kaart</span><span>Geprinte “waar staat wat”-kaart, één A4 per bureau</span></li>
@@ -539,7 +555,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
 <section id="kosten" aria-labelledby="h-ko" style="border-top:1px solid var(--rule)">
   <div class="grid">
     <div>
-      <span class="sheet-id">07 · kostenmeter</span>
+      <div class="blad"><div class="k">blad</div><div class="v brass">07/13</div><div class="k">onderdeel</div><div class="v">kostenmeter</div></div>
       <h2 id="h-ko">Wat kost zoeken jullie nu per jaar?</h2>
       <p style="margin:1.25rem 0 1.75rem;max-width:48ch;color:var(--steel)">Zet je eigen cijfers erin. Dit is een rekensom op jouw invoer, geen belofte van ons.</p>
 
@@ -582,55 +598,47 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
 </section>
 
 <section id="prijs" aria-labelledby="h-pr" style="border-top:1px solid var(--rule)">
-  <span class="sheet-id">08 · prijs</span>
+  <div class="blad"><div class="k">blad</div><div class="v brass">08/13</div><div class="k">onderdeel</div><div class="v">prijs</div></div>
   <h2 id="h-pr" style="max-width:22ch">Begin bij de scan. Die verrekenen we volledig.</h2>
-  <div class="tiers">
-    <div class="tier primary">
-      <span class="badge">Begin hier</span>
-      <div class="name">Fundament Scan</div>
-      <div class="price">€1.950</div>
-      <div class="sub">Twee weken, vaste prijs</div>
-      <ul>
-        <li>Interviews en toolinventarisatie</li>
-        <li>Bestandsaudit met echte cijfers</li>
-        <li>Risicobevindingen</li>
-        <li>90-dagenplan dat je ook zonder ons kunt uitvoeren</li>
-      </ul>
-      <a class="btn btn-brass" href="#slot">Plan de scan in</a>
-      <p style="font-size:.875rem;color:var(--steel);margin:14px 0 0">Ga je door met het traject, dan gaat dit bedrag er volledig vanaf.</p>
-    </div>
-    <div class="tier">
-      <div class="name">Het AI-Fundament</div>
-      <div class="price">€8.500</div>
-      <div class="sub">Zes weken · bandbreedte €6.500–12.500 naar omvang</div>
-      <ul>
-        <li>Alles uit sectie 06</li>
-        <li>Uitrolsessie en geprinte kaart</li>
-        <li>12 maanden tool-tegoed</li>
-        <li>Overdracht met je IT-partner</li>
-        <li>Driftcontrole na 90 dagen</li>
-      </ul>
-      <a class="btn btn-ink" href="#slot">Vraag de scope-opzet aan</a>
-    </div>
-    <div class="tier">
-      <div class="name">Fundament Abonnement</div>
-      <div class="price">staffel</div>
-      <div class="sub">Drie tarieven naar kantooromvang · 12 maanden</div>
-      <ul>
-        <li>Driftcontrole per kwartaal</li>
-        <li>Contextupdates</li>
-        <li>Assessment van nieuwe tools</li>
-        <li>Helpdesk voor medewerkers</li>
-      </ul>
-      <div class="ph">PLACEHOLDER: hier komen de drie staffelbedragen zodra je ze vastzet.</div>
-    </div>
+  <div class="spec-wrap">
+    <table class="spec">
+      <colgroup><col><col class="primary"><col><col></colgroup>
+      <thead>
+        <tr>
+          <th class="rowlabel"></th>
+          <th class="primary"><span class="badge">Begin hier</span><div class="name">Fundament Scan</div><span class="price">€1.950</span></th>
+          <th><div class="name">Het AI-Fundament</div><span class="price">€8.500</span></th>
+          <th><div class="name">Fundament Abonnement</div><span class="price">staffel</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="rowlabel">duur</td><td class="primary">2 weken, vaste prijs</td><td>6 weken · €6.500–12.500 naar omvang</td><td>12 maanden</td></tr>
+        <tr><td class="rowlabel">interviews &amp; toolinventarisatie</td><td class="primary yes">●</td><td class="yes">●</td><td class="no">–</td></tr>
+        <tr><td class="rowlabel">bestandsaudit + risicobevindingen</td><td class="primary yes">●</td><td class="yes">●</td><td class="no">–</td></tr>
+        <tr><td class="rowlabel">90-dagenplan</td><td class="primary yes">●</td><td class="yes">●</td><td class="no">–</td></tr>
+        <tr><td class="rowlabel">taxonomie, rechtenmatrix, Context Pack, spelregels</td><td class="primary no">–</td><td class="yes">●</td><td class="no">–</td></tr>
+        <tr><td class="rowlabel">uitrolsessie + geprinte kaart</td><td class="primary no">–</td><td class="yes">●</td><td class="no">–</td></tr>
+        <tr><td class="rowlabel">tool-tegoed</td><td class="primary no">–</td><td class="yes">12 maanden</td><td class="yes">doorlopend</td></tr>
+        <tr><td class="rowlabel">driftcontrole</td><td class="primary no">–</td><td class="yes">eenmalig, na 90 dagen</td><td class="yes">per kwartaal</td></tr>
+        <tr><td class="rowlabel">helpdesk voor medewerkers</td><td class="primary no">–</td><td class="no">–</td><td class="yes">●</td></tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td class="primary"><a class="btn btn-brass" href="#slot">Plan de scan in</a></td>
+          <td><a class="btn btn-ink" href="#slot">Vraag de scope-opzet aan</a></td>
+          <td><div class="ph">PLACEHOLDER: drie staffelbedragen</div></td>
+        </tr>
+      </tfoot>
+    </table>
   </div>
+  <p style="font-size:.875rem;color:var(--steel);margin-top:14px">Ga je door met het volledige traject, dan gaat het bedrag van de scan er volledig vanaf.</p>
   <p class="tier4-note">Werkflows en agents bovenop een levend fundament kunnen ook, vanaf €5.000. Maar niet eerder dan dat het fundament er ligt, en niet als het niet nodig is.</p>
 </section>
 
 <section id="garantie" aria-labelledby="h-ga" style="border-top:1px solid var(--rule)">
   <div class="guarantee">
-    <span class="sheet-id">09 · garantie</span>
+    <div class="blad"><div class="k">blad</div><div class="v brass">09/13</div><div class="k">onderdeel</div><div class="v">garantie</div></div>
     <h2 id="h-ga">Vaste datum, vaste prijs.</h2>
     <p class="lead" style="margin-top:1.25rem">Staat het fundament door onze schuld niet live op de afgesproken datum, dan vervalt de laatste termijn.</p>
     <p class="lead">En na de scan: vind je het traject het niet waard, dan stop je. Je hebt de scan betaald en je houdt het rapport.</p>
@@ -641,7 +649,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
 <section id="bewijs" aria-labelledby="h-be" style="border-top:1px solid var(--rule)">
   <div class="grid">
     <div>
-      <span class="sheet-id">10 · bewijs</span>
+      <div class="blad"><div class="k">blad</div><div class="v brass">10/13</div><div class="k">onderdeel</div><div class="v">bewijs</div></div>
       <h2 id="h-be">We hebben het eerst op onszelf gedaan.</h2>
       <p style="margin:1.25rem 0 0;max-width:50ch;color:var(--steel)">Voordat we dit aanboden, hebben we de methode op ons eigen bureau uitgevoerd: dezelfde inventarisatie, dezelfde taxonomie, hetzelfde Context Pack. Wat daaruit kwam staat hiernaast, met de kanttekening dat één bureau geen bewijs is, maar wel een eerlijk beginpunt.</p>
       <div class="ph" style="margin-top:1.75rem">PLACEHOLDER: klantcase. Blijft leeg tot er een echte klant is met een echt cijfer. Geen logo's, geen verzonnen quotes.</div>
@@ -658,7 +666,7 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
 <section id="scorecard" aria-labelledby="h-sc" style="border-top:1px solid var(--rule)">
   <div class="grid">
     <div>
-      <span class="sheet-id">11 · scorecard</span>
+      <div class="blad"><div class="k">blad</div><div class="v brass">11/13</div><div class="k">onderdeel</div><div class="v">scorecard</div></div>
       <h2 id="h-sc">Nog niet toe aan een gesprek? Doe de scorecard.</h2>
       <p style="margin:1.25rem 0 1.75rem;max-width:46ch;color:var(--steel)">Vier vragen in dit prototype, twaalf in de echte versie. Je krijgt direct een score. Je e-mail vragen we pas na de uitslag, en alleen voor de pdf.</p>
       <div class="card" id="sc">
@@ -677,21 +685,21 @@ footer{border-top:1px solid var(--rule);padding:26px 0 34px;font-family:"IBM Ple
 </section>
 
 <section id="faq" aria-labelledby="h-fa" style="border-top:1px solid var(--rule)">
-  <span class="sheet-id">12 · vragen</span>
+  <div class="blad"><div class="k">blad</div><div class="v brass">12/13</div><div class="k">onderdeel</div><div class="v">vragen</div></div>
   <h2 id="h-fa">Wat directeuren meestal nog vragen.</h2>
   <div style="max-width:62ch;margin-top:2rem">
-    <details><summary>Moeten al onze bestanden verhuizen?</summary><p>Nee. We maken een structuur en een migratievolgorde. Wat verhuist en wanneer, bepaal jij samen met je IT-partner, vaak in fasen, vaak buiten werktijd.</p></details>
-    <details><summary>Werkt dit ook als we geen Copilot hebben?</summary><p>Ja. Het fundament is toolonafhankelijk. Copilot is alleen de tool waar de meeste kantoren nu tegenaan lopen.</p></details>
-    <details><summary>Is dit juridisch advies over de AVG?</summary><p>Nee. Dit is organisatorisch advies. We leggen vast wat waar mag en wie beslist; de juridische toets blijft bij jullie eigen adviseur.</p></details>
-    <details><summary>Wat als het over een jaar weer scheef staat?</summary><p>Dat gebeurt zonder onderhoud gegarandeerd. Daarom zit de driftcontrole na 90 dagen in het traject, en daarom bestaat het abonnement.</p></details>
-    <details><summary>Kunnen we alleen de scan doen?</summary><p>Ja. Het rapport is zo geschreven dat je het zelf kunt uitvoeren. Dat is bewust, anders is het geen eerlijk rapport.</p></details>
+    <details><summary><span class="qtag">Q1</span><span class="qtxt">Moeten al onze bestanden verhuizen?</span></summary><p>Nee. We maken een structuur en een migratievolgorde. Wat verhuist en wanneer, bepaal jij samen met je IT-partner, vaak in fasen, vaak buiten werktijd.</p></details>
+    <details><summary><span class="qtag">Q2</span><span class="qtxt">Werkt dit ook als we geen Copilot hebben?</span></summary><p>Ja. Het fundament is toolonafhankelijk. Copilot is alleen de tool waar de meeste kantoren nu tegenaan lopen.</p></details>
+    <details><summary><span class="qtag">Q3</span><span class="qtxt">Is dit juridisch advies over de AVG?</span></summary><p>Nee. Dit is organisatorisch advies. We leggen vast wat waar mag en wie beslist; de juridische toets blijft bij jullie eigen adviseur.</p></details>
+    <details><summary><span class="qtag">Q4</span><span class="qtxt">Wat als het over een jaar weer scheef staat?</span></summary><p>Dat gebeurt zonder onderhoud gegarandeerd. Daarom zit de driftcontrole na 90 dagen in het traject, en daarom bestaat het abonnement.</p></details>
+    <details><summary><span class="qtag">Q5</span><span class="qtxt">Kunnen we alleen de scan doen?</span></summary><p>Ja. Het rapport is zo geschreven dat je het zelf kunt uitvoeren. Dat is bewust, anders is het geen eerlijk rapport.</p></details>
   </div>
 </section>
 
 <section class="slot" id="slot" aria-labelledby="h-sl" style="border-top:1px solid var(--rule)">
   <div class="grid">
     <div>
-      <span class="sheet-id">13 · plan de scan</span>
+      <div class="blad"><div class="k">blad</div><div class="v brass">13/13</div><div class="k">onderdeel</div><div class="v">plan de scan</div></div>
       <h2 id="h-sl" style="max-width:20ch">Twee weken, €1.950, en je weet waar je staat.</h2>
       <form id="f" class="sheet" style="margin-top:2rem;max-width:420px;padding:26px" novalidate>
         <div class="field"><label for="n">Naam</label><input id="n" name="n" autocomplete="name"></div>
